@@ -157,7 +157,6 @@
             }
 
         </script>
-
         <style>
             /*navbar*/
                 .navbar {
@@ -165,21 +164,17 @@
                     transition: top 0.3s ease; /* Smooth transition for hiding/showing */
                     z-index: 1000; /* Ensure the navbar is above other content */
                 }
-
                 a img {
                     padding-left: 80px;
                     height: 90px;
                     width: auto;
                 }
-
                 .navbar-nav {
                     margin-left: auto;
                 }
-
                 .custom-lightblue {
                     background-color: #f8feff;
                 }
-
                 /*navbar buttons*/
                 .scroll-button {
                     border-radius: 30px;
@@ -193,7 +188,6 @@
                     transition: background-color 0.3s ease;
                     background-color: #f8feff;
                 }
-
                 .navbar-toggler-icon {
                     margin-right: 80px;
                     border-radius: 30px;
@@ -232,7 +226,6 @@
                         margin: 10px auto;
                     }
                 }
-
             /*home section*/
                 #home {
                     display: flex;
@@ -243,21 +236,18 @@
                     background-position: center;
                     text-align: center;
                 }
-
                 #home .content {
                     text-align: center;
                     background-color: rgba(0, 0, 0, 0.5);
                     padding: 15px;
                     border-radius: 20px;
                 }
-
                 #home h1 {
                     color: #fff;
                     font-size: 3rem;
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                     margin-bottom: 20px;
                 }
-
             /*pray section*/
                 #pray {
                     background-color: #dbdbdb76; /* Background color for the section */
@@ -320,13 +310,11 @@
                     /* Updated styles for mobile view */
                     padding: 8px 16px; /* Adjust button padding for smaller screens */
                 }
-
                 .social-media a i {
                     font-size: 24px; /* Adjust the size as needed */
                     color: #000000; /* Facebook brand color */
                     /* Add more styles as needed */
                 }
-
                 .social-media a:hover {
                     background-color: #c7c7c7; /* Change background color on hover */
                     transition: background-color 0.5s ease;
@@ -508,32 +496,26 @@
                     width: 50vw;
                     height: auto;
                 }
-
                 #salon {
                     width: 25vw;
                     height: auto;
                     margin-left: 9.5vw;
                 }
-
                 #salon-d{
                     margin-left: 9.5vw;
                 }
-
                 #diwan {
                     width: 25vw;
                     height: auto;
                 }
-
                 #nadi {
                     width: 25vw;
                     height: auto;
                 }
-
                 #hall {
                     width: 25vw;
                     height: auto;
                 }
-
                 #maktaba {
                     width: 25vw;
                     height: auto;
@@ -625,7 +607,6 @@
                     /* Updated styles for mobile view */
                     padding: 8px 16px; /* Adjust button padding for smaller screens */
                 }
-
                 .berem-content p {
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 23px;
@@ -916,11 +897,8 @@
                 }
 
         </style>
-
     </head>
-
     <body>
-
         <nav class="navbar navbar-expand-md navbar-lightblue custom-lightblue fixed-top">
             <a class="navbar-brand" href="#"><img src="https://i.postimg.cc/1X3CFRx8/logo-2.png" alt="Logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -946,15 +924,12 @@
                 </ul>
             </div>
         </nav>
-
         <div class="sections">
-
             <section class="section-content" id="home" style="background-image: url('https://i.postimg.cc/c1zGjZt5/2.jpg');">
                 <div class="content">
                     <h1 id="home-header"  dir="auto">رعية مار مارون - الجش</h1>
                 </div>
             </section>
-
             <section class="section-content" id="pray">
                 <div class="content">
                     <h2 id="pray-header" dir="auto"><ins>صلوات وقداديس</ins></h2>
@@ -988,25 +963,21 @@
                     </div>
                 </div>
             </section>
-
             <section class="section-content" id="info">
                 <h1 class="info-content" id="info-header" style="color: #000000; font-size: 3rem; margin-bottom: 80px;"><img src='https://i.postimg.cc/1X3CFRx8/church-logo.png' border='0' alt='church-logo'><br>معلومات</h1>
                 <button class="info-button" id="statistics-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('statistics')">إحصائيات</button>
                 <button class="info-button" id="ekliros-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('ekliros')">إكليروس</button>
                 <button class="info-button" id="berem-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('berem')">كفر برعم</button>
                 <button class="info-button" id="jish-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('jish')">الجش - بلدة القديس بولس</button>
-                
                 <div class="info-content" id="jish" style="display: none;"><!-- Content for jish -->
                     <h2 id="jish-header">الجش - بلدة القديس بولس</h2>
                     <button class="jish-button" id="jish-churches-button" style="margin-bottom: 50px;" onclick="showJishSubSection('churches')">الكنائس</button>
                     <button class="jish-button" id="Jhistory-button" style="margin-bottom: 50px;" onclick="showJishSubSection('Jhistory')">تاريخ</button>
-                    
                     <div class="jish-content" id="churches" style="display: none;"><!-- Content for churches -->
                         <h2 id="churches-header">الكنائس</h2>
                         <button class="jish-button" id="botros-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('botros')">كنيسة مار بطرس وبولس</button>
                         <button class="jish-button" id="Jsayeda-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('Jsayeda')">كنيسة السيدة</button>
                         <button class="jish-button" id="maroon-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('maroon')">كنيسة مار مارون</button>
-                        
                         <div class="jish-content" id="maroon" style="display: none;"><!-- Content for maroon -->
                             <h2 id="maroon-header">كنيسة مار مارون</h2>
                             <p id="maroon-p1" dir="auto">لما كانت كنيسة "السيدة العذراء" بمساحةٍ لا تتجاوز 100 متر مربع، بدأنا بالتفكير ببناء كنيسة جديدة تحمل اسم شفيع الكنيسة المارونية، القديس مارون. بدأ العمل عام 1980، وفي 21.2.1982، وضع المثلث الرحمات المطران يوسف خوري حجر الأساس؛ من ثم، قام خلفه، المثلث الرحمات المطران مارون صادر، بتدشين الكنيسة في 24.8.1996 وسط حشد مهیب من أساقفة وكهنة الكنيسة الكاثوليكية في الأراضي المقدسة ومن أبناء وبنات رعايا الجليل.</p><br>  
@@ -1151,7 +1122,6 @@
                                 </div>
                             </div><br>
                         </div>
-                        
                         <div class="jish-content" id="Jsayeda" style="display: none;"><!-- Content for harakat -->
                             <h2 id="Jsayeda-header">كنيسة السيدة</h2>
                             <p id="Jsayeda-p1" dir="auto">تقف كنيسة السيدة شاهدا على الحضور الماروني في الجش لعشراتِ عشراتٍ من السنين. لا نعرف سنة بناء الكنيسة، إلا أننا نعرف أنه أعيد بناؤها عام 1838، أي سنة بعد الزلزال الذي دمر القرية. في الكنيسة حجر يؤرخ هذا الأمر، وقد نقش عليه:</p><br>
@@ -1161,7 +1131,6 @@
                             <img id="Jsayeda-after2" src="https://i.postimg.cc/vZSn0B7Q/2021-2.jpg"><br>
                             <h5 id="Jsayeda-after-d" style="text-align: center;">كنيسة السيدة بعد ترميم 2021</h5>
                         </div>
-                        
                         <div class="jish-content" id="botros" style="display: none;"><!-- Content for harakat -->
                             <h2 id="botros-header">كنيسة مار بطرس وبولس</h2>
                             <p id="botros-p1" dir="auto">منذ تسلمت خدمة الرعية، عرف أن مسؤوليتي ليست فقط تجاه أبناء رعيتي، بل تتخطاها لتشمل أبناء رعية مار بطرس وبولس للروم الكاثوليك، وخاصة بين السنوات 1975 و 2000، إذ كنت الكاهن الوحيد في القرية، وكلفت بخدمة الرعية الشقيقة، ولم أفرق أبدا بين بطرس ومارون، فكلنا للمسيح. وأشهد هنا أن إخوتنا الروم الكاثوليك ساهموا مثل إخوتهم الموارنة في بناء كنيسة مار مارون، وتبرعوا بالمال والعمل، ولا أنسى بالتحديد المرحومين نخلة زكريا حداد وشقيقه أديب حداد، والمهندس الفذّ جورج يوسف حداد.</p><br>
@@ -1177,7 +1146,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="jish-content" id="Jhistory" style="display: none;"><!-- Content for Jhistory -->
                         <h2 id="Jhistory-header">تاريخ</h2>
                         <p id="Jhistory-p1" dir="auto">قرية تاريخية، عرفت في الزمن الغابر باسم "جسكالا." منها يوحنان الجشي قائد ثورة اليهود ضد الرومان، ومنها عائلة القديس بولس قبل مغادرتها إلى طرسوس. في كتابه مشاهير الرجال، كتب القديس إيرونيموس (+420)، أحد آباء الكنيسة، ما يلي:</p><br>
@@ -1190,17 +1158,14 @@
                         <p id="Jhistory-p8" dir="auto"><b>كهنة رعية الجش ومعاونيهم: </b>أول من خدم الرعية كان الأب اسطفان دخول (حوالي عام 1800)، خلفه: الأب يوسف دخول (1855-1902)؛ الأب يوسف عقل (1901-1938) والأب يوسف دخول علم (1917-1933) والأب الياس سوسان (1901-1956)؛ الأب يوسف سوسان (1931-1967)، والأب كامل فرح (1976-1971). منذ سنة 1971، يخدم الرعية الأب بشارة سليمان. عاونه، بين الأعوام 2008-2010، الأب سامر زكنون، ومنذ عام 2015، الأب ساندي حبيب.</p>
                     </div>
                 </div>
-
                 <div class="info-content" id="berem" style="display: none;"><!-- Content for berem -->
                     <h2>كفر برعم</h2>
                     <button class="berem-button" style="margin-bottom: 50px;" onclick="showBeremSubSection('Bchurch')">الكنيسة</button>
                     <button class="berem-button" style="margin-bottom: 50px;" onclick="showBeremSubSection('Bhistory')">تاريخ</button>
-                    
                     <div class="berem-content" id="Bhistory" style="display: none;"><!-- Content for Bhistory -->
                         <h2>تاريخ</h2><br>
                         <p id="Bhistory-p1" dir="auto">هي قرية قديمة تقع على الحدود اللبنانية. هُجِّر سكانها سنة 1948؛ منهم من رحل الى لبنان ومنهم إلى الجش. حكمت محكمة العدل العليا سنة 1952 لصالح أبناء كفربرعم، ولكن الحكومات المتعاقبة رفضت تنفيذ الحكم، لا بل قامت إحداها بإعطاء الأمر بتدمير القرية سنة 1953. كان عدد السكان قبل التهجير حوالي 1،000 نسمة (150 بيتا) ومساحة أراضيها حوالي 12،500 دونم، منها حوالي 1،000 دونم مسجلة على اسم الوقف الماروني.</p><br>
                     </div>
-                    
                     <div class="berem-content" id="Bchurch" style="display: none;"><!-- Content for church -->
                         <h2>كنيسة السيدة في كفر برعم</h2>
                         <p id="Bchurch-p1" dir="auto"> لا شك أن تاريخ هذه الكنيسة يعود الى أواخر القرن الثامن عشر. سنة 1860، أُحرقت الكنيسة بما فيها من محتويات وسجلات، وبعد اكثر من عشر سنوات قام الأهالي ببناء الكنيسة الحالية. عام 1926، ومع بداية استخدام الإسمنت في المنطقة، قام أهل برعم بصب سطح الكنيسة بالإسمنت، وكانوا قد جمعوا البحص اللازم من مسلان القرية. منذ التهجير، سنة 1948، أُغلقت الكنيسة ومنع أي شخص من فتحها، إلا أن أهالي برعم، وفي سنة 1972، قصدوا الكنيسة وفتحوها واعتصم المئات منهم في قريتهم المنكوبة، فاصطدموا بقوات الشرطة والجيش، فتم القبض على كاهن الرعية، الأب بشارة سليمان، وأربعة عشر رجلا وزجهم في السجن. أجريت لهم محكمة في اليوم التالي، وبرئت ساحتهم. قام الأهالي بترميم الكنيسة، وخلال السنوات التالية أقيمت العديد من العمادات والأكاليل هناك، وتم الاحتفال بالقداس في أعياد الميلاد والشعانين والفصح. ومنذ عام 2009، بدأ الاحتفال بالقداس الإلهي أسبوعيا في الكنيسة.</p><br>
@@ -1217,12 +1182,11 @@
                         <p id="Bchurch-p2" dir="auto"><b>كهنة رعية كفر برعم: </b>أول من خدم الرعية كان الأب بولس مطر (1760)، خلفه: الأب أندراوس أبو فارس (1770-1801)؛ الأب يوسف ريشا (1785-1806)؛ الأب الياس يوسف ريشا (1807-1857)؛ الأب يوسف الياس ريشا (1855-1913)؛ الأب يوسف الشوفاني (1860-1899) والأب منصور عاصي (1860-1899) والأب موسى الياس سوسان (1860-1900)؛ الأب الياس سوسان (1901-1948) والأب يوسف الياس (1911-1948)؛ الأب يوسف سوسان (1931-1948)؛ الأب بشارة سليمان (1972-2009)؛ الأب سامر زكنون (2009-2010)؛ الأب عفيف مخول (2010-2016)؛ الأب يوسف يعقوب (2016-2018)، والأب سليم سوسان (2018-الآن).</p>
                     </div>
                 </div>
-
                 <div class="info-content" id="ekliros" style="display: none;"><!-- Content for ekliros -->
                     <h2 id="ekliros-heading" dir="auto">إكليروس الأبرشية والنيابتين البطريركيتين</h2>
                     <div class="photo-container">
                         <div class="photo-item">
-                            <img id="Ebeshara" src="https://i.postimg.cc/4dPXJdxz/image.jpg" alt="Photo 1">
+                            <img id="Ebeshara" src="https://i.postimg.cc/j27556Zc/image.png" alt="Photo 1">
                             <h5 id="Ebeshara-d" dir="auto">الأب بشارة سليمان:<br> كاهن رعية مار مارون؛ ولد في 1.8.1947؛ سيم كاهنا في 14.8.1971</h5>
                         </div>
                         <div class="photo-item">
@@ -1278,7 +1242,7 @@
                             <h5 id="Emagdy-d" dir="auto">الأب مجدي هاشول:<br>: كاهن رعية مار شربل في عسفيا؛ ولد في 09.11.1982؛ سيم كاهنا في 17.8.2019</h5>
                         </div>
                         <div class="photo-item">
-                            <img id="Esandey" src="https://i.postimg.cc/sDKNfWz6/25425.jpg" alt="Photo 15">
+                            <img id="Esandey" src="https://i.postimg.cc/3rCTKN4C/الأب_ساندي_حبيب.jpg" alt="Photo 15">
                             <h5 id="Esandey-d" dir="auto">الأب ساندي حبيب:<br>معاون كاهن رعية مار مارون في الجش؛ ولد في 16.10.1981؛ سيم كاهنا في 10.10.2015</h5>
                         </div>
                     </div><br><br>
@@ -1310,7 +1274,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="info-content" id="statistics" style="display: none;"><!-- Content for statistics -->
                     <h2 id="statistics-heading" dir="auto">إحصائيات</h2><br><br>
                     <h3 id="segel-alaomad" dir="auto">من سجل العماد</h3><br>
@@ -1719,16 +1682,13 @@
                     </div>
                 </div>
             </section>
-
             <section class="section-content" id="apostolic">
                 <h1 class="apostolic-content" id="apostolic-header" style="color: #000000; font-size: 3rem; margin-bottom: 80px;"><img src='https://i.postimg.cc/tYWYxKzj/Black-Logo.png' border='0' alt='Black-Logo'><br>الحركة الرسولية</h1>
                 <button class="apostolic-button" id="apostolic-groups" style="margin-bottom: 50px;" onclick="showSubSection('groups')">المجموعات</button>
                 <button class="apostolic-button" id="apostolic-photos" style="margin-bottom: 50px;" onclick="showSubSection('photos')">صور</button>
                 <button class="apostolic-button" id="apostolic-info" style="margin-bottom: 50px;" onclick="showSubSection('AMinfo')">معلومات</button>
-                
                 <div class="apostolic-content" id="groups" style="display: none;"><!-- Content for groups -->
                     <h2 id="groups-header">المجموعات</h2>
-                    
                     <h3 id="group1">لجنة الحركة</h3>
                     <div class="members-container">
                         <div class="member">
@@ -1788,7 +1748,6 @@
                             </div>
                         </div>
                     </div>
-
                     <h3 id="group2">الشبيبة</h3>
                     <div class="members-container">
                         <div class="member">
@@ -1797,7 +1756,6 @@
                             </div>
                         </div>
                     </div>
-
                     <h3 id="group3">الطلائع</h3>
                     <div class="members-container">
                         <div class="member">
@@ -1806,7 +1764,6 @@
                             </div>
                         </div>
                     </div>
-
                     <h3 id="group4">المارينز</h3>
                     <div class="members-container">
                         <div class="member">
@@ -1815,7 +1772,6 @@
                             </div>
                         </div>
                     </div>
-
                     <h3 id="group5">الفرسان</h3>
                     <div class="members-container">
                         <div class="member">
@@ -1825,7 +1781,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="apostolic-content" id="photos" style="display: none;"><!-- Content for photos -->
                     <h2 id="photos-header">صور</h2><br>
                     <div class="photo-container">
@@ -1869,31 +1824,28 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="apostolic-content" id="AMinfo" style="display: none;"><!-- Content for AMinfo -->
                     <h2 id="AMinfo-heading" dir="auto">معلومات</h2><br>
                     <p id="AMinfo-p1" dir="auto">هي القلب النابض للرعية. نشأت الحركة الرسولية في الرعية في سنوات الثمانينات من القرن العشرين، إلا أنها لبست حلتها الجديدة مع مجيء راهبات القديسة تريز الطفل يسوع المارونيات أواخر عام 1998. تتكون الحركة من عدة فرق هي: الفرسان (الطلاب من صف البستان وحتى الصف السادس)، المارينز (طلاب صفّي السابع والثامن)، الطلائع (طلاب صفّي التاسع والعاشر)، الشبيبة (طلاب صفّي الحادي عشر والثاني عشر)، المرسلون (طلاب الجامعات)، وفرقة المتزوجين. للحركة لقاءات روحية-اجتماعية أسبوعية، بالإضافة لتنشئات ورحل داخلية عدّة خلال السنة؛ إضافة، نظمت الحركة أربع رحل لمرشدي الفرسان إلى خارج البلاد: بريطانيا عام 2016، مالطا عام 2017، فرنسا عام 2018 وألمانيا والنمسا عام 2019. تتكلل فعاليات الحركة بمخيم صيفي يدوم نحو عشرة أيام في حرم الكنيسة؛ عام 2019، بلغ عدد المشتركين في المخيم 318 ولدا وبنتا ونحو 50 مرشدا ومرشدة.</p>
                 </div>
             </section>
-
             <footer class="section-content" id="connnect">
-                
                 <div class="contact-info">
                     <h2>Contact Us</h2>
                     <p>Email: example@example.com</p>
                     <p>Phone: 0558862438</p>
                 </div>
-
                 <div class="location">
                     <h2>Location</h2>
                     <a href="https://maps.app.goo.gl/JTw1AsajNrvvkfqUA"><img src="https://i.postimg.cc/qRtkdtSB/location-on-FILL0-wght400-GRAD0-opsz48.png">Mar Maron Church, Jish, Israel</a>
                 </div>
-
                 <div class="social-media">
                     <h2>Follow Us</h2>
                     <a href="https://www.facebook.com/Apostolic.Movement.Jish" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/apostolic_movement_jish/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <!-- Add more social media links as needed -->
                 </div>
+                <!-- Add any additional details here -->
             </footer>
         </div>
     </body>
