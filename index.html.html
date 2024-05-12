@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>رعية مار مارون - الجش</title>
+        <link rel="icon" href="https://i.postimg.cc/1X3CFRx8/logo-2.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        <script>
+
+            function smoothScroll(target) {
+                document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+                // Close the navbar if it's open
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                }
+            }
+
+            // Function to show the apostolic section
+            function showApostolicSection() {
+                // Show the apostolic section and hide other sections
+                const sections = document.querySelectorAll('.section-content');
+                sections.forEach(section => {
+                    if (section.id !== 'apostolic') {
+                        section.style.display = 'none';
+                    } else {
+                        section.style.display = 'block';
+                    }
+                });
+            }
+
+            // Function to show the info section
+            function showInfoSection() {
+                // Show the info section and hide other sections
+                const sections = document.querySelectorAll('.section-content');
+                sections.forEach(section => {
+                    if (section.id !== 'info') {
+                        section.style.display = 'none';
+                    } else {
+                        section.style.display = 'block';
+                    }
+                });
+            }
+
+            // Function to show the all section (exept apostolic and info)
+            function showAllSections() {
+                // Show all sections except apostolic section and home section and info section
+                const sections = document.querySelectorAll('.section-content');
+                sections.forEach(section => {
+                    if (section.id !== 'apostolic' && section.id !== 'home' && section.id !== 'info') {
+                        section.style.display = 'block';
+                    } else if (section.id === 'home') {
+                        section.style.display = 'flex';
+                    } else {
+                        section.style.display = 'none'; // Keep apostolic section and info hidden
+                    }
+                });
+            }
+
+            /*apostolic subsections*/
+            function showSubSection(subSectionId) {
+                const subSection = document.getElementById(subSectionId);
+                if (subSection) {
+                    const apostolicSection = document.getElementById('apostolic');
+                    const subSections = apostolicSection.querySelectorAll('.section-content > div');
+                    subSections.forEach(section => {
+                        if (section.id === subSectionId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+            }
+
+            /*info subsections*/
+            function showInfoSubSection(subSectionId) {
+                const subSection = document.getElementById(subSectionId);
+                if (subSection) {
+                    const infoSection = document.getElementById('info');
+                    const subSections = infoSection.querySelectorAll('.section-content > div');
+                    subSections.forEach(section => {
+                        if (section.id === subSectionId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+            }
+            
+            /*jish subsections*/
+            function showJishSubSection(subSectionId) {
+                const subSection = document.getElementById(subSectionId);
+                if (subSection) {
+                    const jishSection = document.getElementById('jish');
+                    const subSections = jishSection.querySelectorAll('.info-content > div');
+                    subSections.forEach(section => {
+                        if (section.id === subSectionId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+            }
+
+            /*jish churches subsections*/
+            function showChurchSubSection(subSectionId) {
+                const subSection = document.getElementById(subSectionId);
+                if (subSection) {
+                    const jchurchesSection = document.getElementById('churches');
+                    const subSections = jchurchesSection.querySelectorAll('.jish-content');
+                    subSections.forEach(section => {
+                        if (section.id === subSectionId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+            }
+
+            let currentShownSectionId = null;
+
+            /*harakat mar maraon subsubsection*/
+            function showHarakatSubSection(subSectionId) {
+                const subSection = document.getElementById(subSectionId);
+                if (subSection) {
+                    if (subSection.style.display === 'block') {
+                        subSection.style.display = 'none';
+                    } else {
+                        subSection.style.display = 'block';
+                    }
+                }
+            }
+
+
+            /*berem subsections*/
+            function showBeremSubSection(subSectionId) {
+                const subSection = document.getElementById(subSectionId);
+                if (subSection) {
+                    const beremSection = document.getElementById('berem');
+                    const subSections = beremSection.querySelectorAll('.info-content > div');
+                    subSections.forEach(section => {
+                        if (section.id === subSectionId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+            }
+
+        </script>
+
+        <style>
+            /*navbar*/
+                .navbar {
+                    border-width: thick;
+                    transition: top 0.3s ease; /* Smooth transition for hiding/showing */
+                    z-index: 1000; /* Ensure the navbar is above other content */
+                }
+
+                a img {
+                    padding-left: 80px;
+                    height: 90px;
+                    width: auto;
+                }
+
+                .navbar-nav {
+                    margin-left: auto;
+                }
+
+                .custom-lightblue {
+                    background-color: #f8feff;
+                }
+
+                /*navbar buttons*/
+                .scroll-button {
+                    border-radius: 30px;
+                    border-style: solid;
+                    border-color: #f8feff;
+                    margin: 10px;
+                    border-width: thick;
+                    padding: 8px 20px;
+                    color: #000000;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    background-color: #f8feff;
+                }
+
+                .navbar-toggler-icon {
+                    margin-right: 80px;
+                    border-radius: 30px;
+                    border-style: inset;
+                    border-color: rgb(67, 67, 67);
+                    margin: 10px;
+                    border-width: thick;
+                    background-color: rgba(150, 150, 150, 0.427);
+                    color: white;
+                }
+
+                .navbar-nav a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+                
+                span h6 {
+                    margin-right: 200px;
+                }
+                .scroll-button:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: white;
+                    transition: background-color 0.5s ease; /* Smooth transition for background color */
+                }
+                @media (max-width: 576px) {
+                    .navbar-nav {
+                        margin-left: 0;
+                    }
+                    .navbar-toggler-icon {
+                        margin-right: 5PX;
+                    }
+                    .navbar-collapse {
+                        text-align: center;
+                    }
+                    .scroll-button {
+                        margin: 10px auto;
+                    }
+                }
+
+            /*home section*/
+                #home {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    background-size: cover;
+                    background-position: center;
+                    text-align: center;
+                }
+
+                #home .content {
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 15px;
+                    border-radius: 20px;
+                }
+
+                #home h1 {
+                    color: #fff;
+                    font-size: 3rem;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    margin-bottom: 20px;
+                }
+
+            /*pray section*/
+                #pray {
+                    background-color: #dbdbdb76; /* Background color for the section */
+                    padding: 100px 0; /* Add padding as needed */
+                    text-align: center; /* Center the content horizontally */
+                }
+
+                #pray .content {
+                    max-width: 800px; /* Set a maximum width for the content */
+                    margin: 0 auto; /* Center the content horizontally */
+                    margin-top: 20px;
+                }
+
+                #pray h2 {
+                    color: #000000; /* Heading color */
+                    font-size: 2rem; /* Heading font size */
+                    margin-bottom: 20px; /* Add spacing below the heading */
+                }
+
+                .prayer-info {
+                    background-color: #d7d7d7c6; /* Background color for each prayer info block */
+                    padding: 20px; /* Add padding to each block */
+                    margin-bottom: 20px; /* Add spacing between blocks */
+                    border-radius: 8px; /* Add rounded corners to the blocks */
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+                    text-decoration-thickness: thick;
+                    border-radius: 50px;
+                }
+
+                .prayer-info h3 {
+                    color: #000000; /* Heading color for each prayer */
+                    font-size: 1.5rem; /* Font size for prayer headings */
+                    text-decoration: underline;
+                }
+
+                .prayer-info p {
+                    color: #000000; /* Text color for prayer details */
+                    margin-bottom: 10px; /* Add spacing between details */
+                }
+
+                /*contact section*/
+                footer {
+                    background-color: #bababa76;
+                    padding: 20px;
+                    text-align: center;
+                }
+
+                .contact-info, .location, .social-media {
+                    margin-bottom: 20px;
+                }
+
+                .social-media a {
+                    border: none;
+                    background-color: rgb(255, 255, 255); /* Button background color */
+                    color: #fff; /* Button text color */
+                    padding: 10px 20px; /* Button padding */
+                    /*margin: 10px;  Button margin */
+                    border-radius: 15px; /* Button border radius */
+                    cursor: pointer;
+                    /* Updated styles for mobile view */
+                    padding: 8px 16px; /* Adjust button padding for smaller screens */
+                }
+
+                .social-media a i {
+                    font-size: 24px; /* Adjust the size as needed */
+                    color: #000000; /* Facebook brand color */
+                    /* Add more styles as needed */
+                }
+
+                .social-media a:hover {
+                    background-color: #c7c7c7; /* Change background color on hover */
+                    transition: background-color 0.5s ease;
+                }
+
+                @media (max-width: 768px) {
+                    footer {
+                        padding: 10px;
+                    }
+
+                    .social-media a {
+                        margin-right: 5px;
+                    }
+                }
+
+                .location img {
+                    height: 35px;
+                    width: auto;
+                }
+
+                .location a {
+                    text-decoration: none;
+                    color: #000000;
+                    padding-right: 100px;
+                }
+
+            /*info section*/
+                #info {
+                    padding-top: 150px; /* Add padding to top of sections to prevent hiding behind the navigation bar - Adjust the value as needed */
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column; /* Arrange items in a column */
+                    text-align: center; /* Center text horizontally */
+                    background-color: #bababa76;
+                    /* Updated styles for mobile view */
+                    padding: 220px 20px; /* Adjust padding for mobile */
+                }
+
+                .info-content img {
+                    width: 15vw;
+                    height: auto;
+                    margin-bottom: 15px;
+                }
+
+                .info-button {
+                    border: none;
+                    background-color: rgb(100, 100, 100); /* Button background color */
+                    color: #fff; /* Button text color */
+                    padding: 10px 20px; /* Button padding */
+                    /*margin: 10px;  Button margin */
+                    border-radius: 15px; /* Button border radius */
+                    cursor: pointer;
+                    /* Updated styles for mobile view */
+                    padding: 8px 16px; /* Adjust button padding for smaller screens */
+                }
+
+                .info-content p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: large;
+                }
+
+                .info-button:hover {
+                    background-color: #949393; /* Change background color on hover */
+                    transition: background-color 0.5s ease;
+                }
+
+                /*info Jish section*/
+                .jish-button {
+                    border: none;
+                    background-color: rgb(100, 100, 100); /* Button background color */
+                    color: #fff; /* Button text color */
+                    padding: 10px 20px; /* Button padding */
+                    /*margin: 10px;  Button margin */
+                    border-radius: 15px; /* Button border radius */
+                    cursor: pointer;
+                    /* Updated styles for mobile view */
+                    padding: 8px 16px; /* Adjust button padding for smaller screens */
+                }           
+
+                .jish-content p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 23px;
+                    text-align: right;
+                    margin: 0 10vw 0 10vw;
+                }
+
+                .jish-button:hover {
+                    background-color: #949393; /* Change background color on hover */
+                    transition: background-color 0.5s ease;
+                }
+
+                /* info jish harakat section*/
+                #majless {
+                    width: 50vw;
+                    height: auto;
+                }
+
+                #beino {
+                    width: 10vw;
+                    height: auto;
+                }
+
+                #deeb {
+                    width: 10vw;
+                    height: auto;
+                }
+
+                #choir {
+                    width: 50vw;
+                    height: auto;
+                }
+
+                #danas {
+                    width: 50vw;
+                    height: auto;
+                }
+
+                .jish-content .scroll-button {
+                    margin-top: 6vw;
+                }
+
+                #safy {
+                    width: 20vw;
+                    height: auto;
+                }
+                #barca {
+                    width: 20vw;
+                    height: auto;
+                }
+                #roma {
+                    width: 20vw;
+                    height: auto;
+                }
+                #espania {
+                    width: 20vw;
+                    height: auto;
+                }
+                #baby {
+                    width: 20vw;
+                    height: auto;
+                }
+                #tringle {
+                    width: 20vw;
+                    height: auto;
+                }
+
+                .pray-trips {
+                    margin: 5vw;
+                }
+
+                .jish-content h5 {
+                    margin-top: 5px;
+                    font-size: 14px;
+                }
+
+                #aytam-help {
+                    width: 35vw;
+                    height: auto;
+                }
+
+                /*info jish churches maroon section*/
+                #hagar-alasas {
+                    width: 20vw;
+                    height: auto;
+                    margin-right: 5vw;
+                }
+
+                #garaseya {
+                    width: 25vw;
+                    height: auto;
+                }
+
+                .maroon-photos {
+                    margin: 3vw;
+                }
+
+                #maroon-inside {
+                    width: 50vw;
+                    height: auto;
+                }
+
+                #salon {
+                    width: 25vw;
+                    height: auto;
+                    margin-left: 9.5vw;
+                }
+
+                #salon-d{
+                    margin-left: 9.5vw;
+                }
+
+                #diwan {
+                    width: 25vw;
+                    height: auto;
+                }
+
+                #nadi {
+                    width: 25vw;
+                    height: auto;
+                }
+
+                #hall {
+                    width: 25vw;
+                    height: auto;
+                }
+
+                #maktaba {
+                    width: 25vw;
+                    height: auto;
+                }
+
+                #deer {
+                    width: 50vw;
+                    height: auto;
+                }
+
+                #sis-noel {
+                    width: 10vw;
+                    height: auto;
+                }
+
+                #sis-vivian {
+                    width: 11vw;
+                    height: auto;
+                }
+
+                #sis-michlin {
+                    width: 10.5vw;
+                    height: auto;
+                }
+
+                #sis-sayeda {
+                    width: 12vw;
+                    height: auto;
+                }
+
+                #amaret-alwaqef {
+                    width: 40vw;
+                    height: auto;
+                }
+
+                #hadeket-alaadra {
+                    width: 40vw;
+                    height: auto;
+                }
+
+                #seyara {
+                    width: 40vw;
+                    height: auto;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    * p {
+                        font-size: 0.7rem;
+                    }
+                }
+
+                /*info jish churches Jsayeda section*/
+                #Jsayeda-after1 {
+                    width: 25vw;
+                    height: auto;
+                    margin-right: 2vw;
+                }
+
+                #Jsayeda-after2 {
+                    width: 16vw;
+                    height: auto;
+                }
+
+                /*info jish churches botros section*/
+                .botros-photos {
+                    margin: 3vw;
+                }
+
+                #hadi {
+                    width: 10vw;
+                    height: auto;
+                    margin-right: 3vw;
+                }
+
+                #simon {
+                    width: 10vw;
+                    height: auto;
+                }
+
+                /*info Berem section*/
+                .berem-button {
+                    border: none;
+                    background-color: rgb(100, 100, 100); /* Button background color */
+                    color: #fff; /* Button text color */
+                    padding: 10px 20px; /* Button padding */
+                    /*margin: 10px;  Button margin */
+                    border-radius: 15px; /* Button border radius */
+                    cursor: pointer;
+                    /* Updated styles for mobile view */
+                    padding: 8px 16px; /* Adjust button padding for smaller screens */
+                }
+
+                .berem-content p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 23px;
+                    text-align: right;
+                    margin: 0 10vw 0 10vw;
+                }
+
+                .berem-button:hover {
+                    background-color: #949393; /* Change background color on hover */
+                    transition: background-color 0.5s ease;
+                }
+
+                #Bchurch-photo {
+                    width: 25vw;
+                    height: auto;
+                    margin-top: 5vw;
+                }
+
+                #Bmadafen {
+                    width: 20vw;
+                    height: auto;
+                }
+
+            /*apostolic section*/
+                #apostolic {
+                    padding-top: 150px; /* Add padding to top of sections to prevent hiding behind the navigation bar - Adjust the value as needed */
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column; /* Arrange items in a column */
+                    text-align: center; /* Center text horizontally */
+                    background-color: #dbdbdb76;
+                    /* Updated styles for mobile view */
+                    padding: 220px 20px; /* Adjust padding for mobile */
+                }
+                
+                .apostolic-button {
+                    border: none;
+                    background-color: rgb(100, 100, 100); /* Button background color */
+                    color: #fff; /* Button text color */
+                    padding: 10px 20px; /* Button padding */
+                    /*margin: 10px;  Button margin */
+                    border-radius: 15px; /* Button border radius */
+                    cursor: pointer;
+                    /* Updated styles for mobile view */
+                    padding: 8px 16px; /* Adjust button padding for smaller screens */
+                }
+
+                #AMinfo p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 23px;
+                    text-align: right;
+                    margin: 0 10vw 0 10vw;
+                }
+
+                .apostolic-button:hover {
+                    background-color: #949393; /* Change background color on hover */
+                    transition: background-color 0.5s ease;
+                }
+
+                /*groups*/
+                .members-container {
+                    display: flex;
+                    flex-wrap: wrap; /* Arrange items in a column */
+                    justify-content: center; /* Center items horizontally */
+                    align-items: center; /* Center items vertically */
+                    gap: 20px; /* Add spacing between members */
+                    margin-top: 20px; /* Add top margin for spacing */
+                }
+
+                .member {
+                    background-color: #f8f9fa; /* Background color for each member block */
+                    padding: 10px 20px 20px 20px; /* Add padding to each member block */
+                    border-radius: 35px; /* Add rounded corners */
+                    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  Add shadow for depth */
+                    width: 100%; /* Ensure each member block takes full width */
+                    max-width: 400px; /* Set a maximum width for each member block */
+                    text-align: center; /* Center text horizontally */
+                    margin-bottom: 20px; /* Add bottom margin for spacing */
+                }
+
+                .member h3 {
+                    color: #000000; /* Heading color */
+                    font-size: 1.5rem; /* Font size for member names */
+                    margin-bottom: 10px; /* Add spacing below the member name */
+                }
+
+                .member-info {
+                    text-align: center; /* Align member info text to the left */
+                }
+
+                .member-info p {
+                    margin: 5px 0; /* Add spacing between info items */
+                }
+
+                #groups h3 {
+                    margin-top: 30px;
+                }
+
+                /*photos and ekliros*/
+                #photos {
+                    align-items: center; /* Aligns items horizontally at the center */
+                    text-align: center; /* Aligns text content center within its container */
+                }
+
+                #ekliros {
+                    align-items: center; /* Aligns items horizontally at the center */
+                    text-align: center; /* Aligns text content center within its container */
+                }
+
+                .photo-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center; /* Aligns items horizontally at the center */
+                }
+
+                .photo-item {
+                    flex: 0 0 calc(33% - 20px); /* Adjust width as needed */
+                    margin: 10px;
+                    text-align: center;
+                    border: solid;
+                    background-color: white;
+                    border-radius: 15px;
+                    align-items: center; /* Aligns items horizontally at the center */
+                }
+
+                .photo-item img {
+                    max-width: 100%;
+                    border-radius: 15px;
+                }
+
+                .photo-item h5 {
+                    margin-top: 10px;
+                }
+
+                #lagna {
+                    width: 40vw;
+                    height: auto;
+                }
+
+                #shabebe-mo5ayam {
+                    width: 100vw;
+                    height: 23vw;
+                }
+
+                #shabebe-kodas {
+                    width: 100vw;
+                    height: auto;
+                }
+
+                #fursan-photo {
+                    width: 100vw;
+                    height: auto;
+                }
+
+                #poland {
+                    width: 100vw;
+                    height: auto;
+                }
+
+                #malta {
+                    width: 100vw;
+                    height: auto;
+                }
+
+                #france {
+                    width: 100vw;
+                    height: auto;
+                }
+
+                #germany {
+                    width: 100vw;
+                    height: auto;
+                }
+
+                #prague {
+                    width: 100vw;
+                    height: auto;
+                }
+
+                /*ekliros photos*/
+                #Esaleem {
+                    width: 18vw;
+                    height: auto;
+                }
+                #Enaji {
+                    width: 12vw;
+                    height: auto;
+                }
+
+                /*info statistics*/
+                #statistics p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 23px;
+                    text-align: right;
+                    margin: 0 10vw 0 10vw;
+                }
+
+                #statistics-img1 {
+                    width: 43vw;
+                    height: auto;
+                }
+
+                #statistics-img2 {
+                    width: 37vw;
+                    height: auto;
+                }
+
+                #statistics-img3 {
+                    width: 37vw;
+                    height: auto;
+                }
+
+                #statistics-img4 {
+                    width: 37vw;
+                    height: auto;
+                }
+
+                #statistics-img5 {
+                    width: 37vw;
+                    height: auto;
+                }
+
+                #statistics-img6 {
+                    width: 37vw;
+                    height: auto;
+                }
+
+                .table-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 10vw;
+                }
+
+                .table-table {
+                    width: 80%;
+                    max-width: 800px;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    border: solid;
+                }
+
+                th, td {
+                    padding: 10px;
+                    text-align: center;
+                    border: 1px solid #000000;
+                }
+
+                th {
+                    background-color: #f2f2f2;
+                    font-weight: bold;
+                }
+
+                .zawaj-photos {
+                    margin: 3vw;
+                }
+
+                #statistics-img8 {
+                    width: 35vw;
+                    height: auto;
+                }
+
+                #statistics-img9 {
+                    width: 37vw;
+                    height: auto;
+                }
+
+                #statistics-img10 {
+                    width: 37vw;
+                    height: auto;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    #photos h2 {
+                        font-size: 0.8rem; /* Adjust font size for mobile view */
+                    }
+                    #ekliros h2 {
+                        font-size: 0.8rem; /* Adjust font size for mobile view */
+                    }
+
+                    .photo-item h5 {
+                        font-size: 10px; /* Adjust font size for mobile view */
+                    }
+                }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-lightblue custom-lightblue fixed-top">
+            <a class="navbar-brand" href="#"><img src="https://i.postimg.cc/1X3CFRx8/logo-2.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="https://i.postimg.cc/Gmwbz8C7/arrow-drop-down-FILL0-wght400-GRAD0-opsz24.png" alt="icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button class="scroll-button" id="navbar-home" dir="auto" onclick="smoothScroll('#home'); showAllSections();" ><a class="nav-link" href="#" >الصفحة الرئيسية</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="scroll-button" id="navbar-pray"  dir="auto" onclick="smoothScroll('#pray'); showAllSections();">صلوات وقداديس</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="scroll-button" id="navbar-info"  dir="auto" onclick="smoothScroll('#info'); showInfoSection();">معلومات</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="scroll-button" id="navbar-apostolic"  dir="auto" onclick="smoothScroll('#apostolic'); showApostolicSection();">الحركة الرسولية</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="scroll-button" id="navbar-connect"  dir="auto" onclick="smoothScroll('#connnect'); showAllSections();">تواصل</button>
+                    </li>    
+                </ul>
+            </div>
+        </nav>
+
+        <div class="sections">
+
+            <section class="section-content" id="home" style="background-image: url('https://i.postimg.cc/c1zGjZt5/2.jpg');">
+                <div class="content">
+                    <h1 id="home-header"  dir="auto">رعية مار مارون - الجش</h1>
+                </div>
+            </section>
+
+            <section class="section-content" id="pray">
+                <div class="content">
+                    <h2 id="pray-header" dir="auto"><ins>صلوات وقداديس</ins></h2>
+                    <div class="prayer-info">
+                        <h3 id="prayer1" dir="auto">قداس الاحد</h3>
+                        <p id="prayer-info1">وقت الصلاة: 10:00 صباحًا<br>المكان: الكنيسة</p>
+                    </div>
+                    <div class="prayer-info">
+                        <h3 id="prayer2" dir="auto">القداس اليومي</h3>
+                        <p id="prayer-info2" dir="auto">وقت الصلاة: 5:00 بعد الظهر<br>المكان: الكنيسة الصغيرة</p>
+                    </div>
+                    <div class="prayer-info">
+                        <h3 id="prayer3" dir="auto">ليلة الميلاد</h3>
+                        <p id="prayer-info3" dir="auto">وقت الصلاة: 7:00 مساءً<br>المكان: الكنيسة</p>
+                    </div>
+                    <div class="prayer-info">
+                        <h3 id="prayer4" dir="auto">عيد الميلاد</h3>
+                        <p id="prayer-info4" dir="auto">وقت الصلاة: 10:00 صباحًا<br>المكان: الكنيسة</p>
+                    </div>
+                    <div class="prayer-info">
+                        <h3 id="prayer5" dir="auto">ليلة الفصح</h3>
+                        <p id="prayer-info5" dir="auto">وقت الصلاة: 7:00 مساءً<br>المكان: الكنيسة</p>
+                    </div>
+                    <div class="prayer-info">
+                        <h3 id="prayer6" dir="auto">عيد الفصح</h3>
+                        <p id="prayer-info6" dir="auto">وقت الصلاة: 10:00 صباحًا<br>المكان: الكنيسة الصغيرة</p>
+                    </div>
+                    <div class="prayer-info">
+                        <h3 id="prayer7" dir="auto">مسيرة الشعانين</h3>
+                        <p id="prayer-info7" dir="auto">وقت الصلاة: 10:30 صباحًا<br>المكان: ساحة الكنيسة الى اول البلد</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-content" id="info">
+                <h1 class="info-content" id="info-header" style="color: #000000; font-size: 3rem; margin-bottom: 80px;"><img src='https://i.postimg.cc/1X3CFRx8/church-logo.png' border='0' alt='church-logo'><br>معلومات</h1>
+                <button class="info-button" id="statistics-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('statistics')">إحصائيات</button>
+                <button class="info-button" id="ekliros-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('ekliros')">إكليروس</button>
+                <button class="info-button" id="berem-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('berem')">كفر برعم</button>
+                <button class="info-button" id="jish-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('jish')">الجش - بلدة القديس بولس</button>
+                
+                <div class="info-content" id="jish" style="display: none;"><!-- Content for jish -->
+                    <h2 id="jish-header">الجش - بلدة القديس بولس</h2>
+                    <button class="jish-button" id="jish-churches-button" style="margin-bottom: 50px;" onclick="showJishSubSection('churches')">الكنائس</button>
+                    <button class="jish-button" id="Jhistory-button" style="margin-bottom: 50px;" onclick="showJishSubSection('Jhistory')">تاريخ</button>
+                    
+                    <div class="jish-content" id="churches" style="display: none;"><!-- Content for churches -->
+                        <h2 id="churches-header">الكنائس</h2>
+                        <button class="jish-button" id="botros-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('botros')">كنيسة مار بطرس وبولس</button>
+                        <button class="jish-button" id="Jsayeda-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('Jsayeda')">كنيسة السيدة</button>
+                        <button class="jish-button" id="maroon-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('maroon')">كنيسة مار مارون</button>
+                        
+                        <div class="jish-content" id="maroon" style="display: none;"><!-- Content for maroon -->
+                            <h2 id="maroon-header">كنيسة مار مارون</h2>
+                            <p id="maroon-p1" dir="auto">لما كانت كنيسة "السيدة العذراء" بمساحةٍ لا تتجاوز 100 متر مربع، بدأنا بالتفكير ببناء كنيسة جديدة تحمل اسم شفيع الكنيسة المارونية، القديس مارون. بدأ العمل عام 1980، وفي 21.2.1982، وضع المثلث الرحمات المطران يوسف خوري حجر الأساس؛ من ثم، قام خلفه، المثلث الرحمات المطران مارون صادر، بتدشين الكنيسة في 24.8.1996 وسط حشد مهیب من أساقفة وكهنة الكنيسة الكاثوليكية في الأراضي المقدسة ومن أبناء وبنات رعايا الجليل.</p><br>  
+                            <div class="photo-container">
+                                <div class="maroon-photos">
+                                    <img id="hagar-alasas" src="https://i.postimg.cc/26zsrP3n/image.jpg">
+                                    <h5 id="hagar-alasas-d" dir="auto">وضع اربعة أجراس كهربائية من اليونان، 2009</h5>
+                                </div>
+                                <div class="maroon-photos">
+                                    <img id="garaseya" src="https://i.postimg.cc/R0Vp2vjx/image.png">
+                                    <h5 id="garaseya-d" dir="auto">مع الأباتي أغسطين حرفوش والصديق إبراهيم عيسى قرب حجر الأساس</h5>
+                                </div>
+                            </div>
+                            <p id="maroon-p2" dir="auto">لم ينتهِ العمل مع تدشين الكنيسة، بل استمر حتى يومنا الحاضر. تم تجهيز الكنيسة بالمقاعد الجديدة وثريات الكريستال التشيكية، وسنة 2004، بالڤيتراج الذي زيّن 60 شباكا بالأيقونات المارونية التي تمثل الأعياد الكبيرة وأشهر القديسين وأسرار المسبحة الوردية. سنة 2005، رُصّعت الكنيسة من الخارج بالحجر، وحتى تلك السنة بلغت تكاليف بناء الكنيسة والقاعات اكثر من 3.5 مليون دولار، جاءت بأغلبيتها الساحقة من تبرعات بالمال أو بالعمل من أبناء الرعية والباقي تبرعات خارجية. سنة 2008-2009، بنيت جراسية بارتفاع حوالي 25 مترا، وسنة 2017، بُني مدخل خشبي. وعام 2018، جرى ترميم واسع النطاق للكنيسة من الداخل، شمل إضافة جهاز تكييف مركزي ضخم وتزين السقف والهيكل وأعمدة الكنيسة بالخشب وترصيع الحائطين المجاورين للهيكل بالحجر شاقل.</p><br>
+                            <p id="maroon-p3" dir="auto">تبلغ مساحة الكنيسة نحو 600 م2، أما القاعات، في الطابق السفلي، فمساحتها حوالي 1،000 م2. تشمل هذه القاعات نادي الشبيبة والمكتبة (تبلغ مساحتهما نحو 200 م2، وجرى ترميمهما عام 2019؛ وتحتوي المكتبة على عشرات الموسوعات والمعاجم ومئات الكتب) والقاعة الكبيرة (مساحتها حوالي 350 م2) والديوان (بمساحة 120 م2، وقد تم ترميم جزء منه عام 2020) وصالون الكنيسة (70 م2) والملجأ (60 م2) وبعض الغرف. هنالك أيضا ثلاث ساحات تحيط الكنيسة من الشمال والشرق والجنوب بمساحة تزيد على 3،500 م2. كل هذه الأماكن تخدم الرعية في أفراحها وأتراحها وفعالياتها المختلفة.</p><br>
+                            <div class="photo-container">
+                                <div class="maroon-photos">
+                                    <img id="maroon-inside" src="https://i.postimg.cc/zvYxyLGv/image.jpg">
+                                    <h5 id="maroon-inside-d" dir="auto">الكنيسة من الداخل</h5>
+                                </div><br>
+                                <div class="maroon-photos">
+                                    <img id="salon" src="https://i.postimg.cc/NMPVJGDk/image.jpg">
+                                    <h5 id="salon-d" dir="auto">جانب من صالون الرعية</h5>
+                                </div>
+                                <div class="maroon-photos">
+                                    <img id="diwan" src="https://i.postimg.cc/h4XPSfkg/image.jpg">
+                                    <h5 id="diwan-d" dir="auto">ديوان الرعية</h5>
+                                </div>
+                                <div class="maroon-photos">
+                                    <img id="nadi" src="https://i.postimg.cc/ZnBQ1kDt/image.jpg">
+                                    <h5 id="nadi-d" dir="auto">نادي الشبيبة</h5>
+                                </div>
+                                <div class="maroon-photos">
+                                    <img id="hall" src="https://i.postimg.cc/vZvjVtJn/image.jpg">
+                                    <h5 id="hall-d" dir="auto">عرض مسرحي للفرسان في القاعة الكبيرة</h5>
+                                </div>
+                                <div class="maroon-photos">
+                                    <img id="maktaba" src="https://i.postimg.cc/vHYSdVgH/image.jpg">
+                                    <h5 id="maktaba-d" dir="auto">جانب من مكتبة الرعية</h5>
+                                </div>
+                            </div><br><br><hr><br>
+                            <button class="jish-button" id="jish-harakat-button" style="margin-bottom: 50px;" onclick="showHarakatSubSection('harakat')">حركات وفعاليات الرعية</button>
+                            <div class="jish-content" id="harakat" style="display: none;"><!-- Content for harakat -->
+                                <h2 id="harakat-header">حركات وفعاليات مار مارون</h2>
+                                <button class="scroll-button" id="navbar-apostolic" onclick="smoothScroll('#apostolic'); showApostolicSection();">الحركة الرسولية</button><br><br><br><br>
+                                <p id="harakat-p1" dir="auto"><b>المجلس الرعوي:</b>وهو يضم عددا من خيرة الرجال في الرعية؛ يرافقون كاهني الرعية في زيارة بيوت المؤمنين وفي مناولة العجزة وعيادة المرضى في المستشفى، ويقدمون المثل الصالح بممارستهم الدينية وتضحيتهم الشخصية.</p><br>
+                                <img id="majless" src="https://i.postimg.cc/9F6kFkgD/image.jpg"><br><br>
+                                <p id="harakat-p2" dir="auto"><b>لجنة الوقف: </b>رغم أنها اقتصرت في السنوات العشر الأخيرة على عضوين فقط، إلا أنها لم تقصر في السهر على مصلحة الوقف واستثماره والمشاركة في اتخاذ القرارات بإقامة المشاريع وترميم وصيانة مباني الوقف. ولا بد لي من التوقف عند عضويها:</p><br>
+                                <p id="harakat-p3" dir="auto">•    عضو اللجنة الأخ بنوا حبيب: يساعدني بمراجعة الحسابات وتحضير الميزانية السنوية والمراسلات والاتصالات وكل ما يلزم من مطبوعات. وله مكتب للتأمينات المختلفة في عمارة الوقف. هو لجانبي في كل لحظة ومستعدٌ أن يترك عمله ويقدِّم كلَّ مساعدة طارئة. وبسبب علمه وأخلاقه وأمانته، اتخذته صديقًا شخصيًا وأمينًا للسر منذ عشرين عامًا. لا أستطيع أن أفيه حقه من الشكر على تضحياته وتبرعاته للكنيسة، لكني أسأل الله أن يحفظه وجميع أفراد عائلته.</p>
+                                <p id="harakat-p4" dir="auto">•  عضو اللجنة الأخ ديب امطانس مارون: متخصص في مجال البناء، وهو مستشاري الخاص في الشؤون العمرانية لما له من كفاءاتٍ في الهندسة والتصميم وتنفيذ المشاريع. ولا يبخل عليَّ أو على الكنيسة بأي نوع من أنواع العطاء. وليس الأمرُ غريبًا، فقد كان والده، المرحوم امطانس عبدالله مارون، من أقرب الناس إلي ولعملي في كنيسة الجش وكفر برعم  وكان دائمًا يرافقني في تحضير التقييمات للعمل وتحضير الميزانيات المطلوبة لكل مرحلة من مراحل البناء. وقد أنجز مع شريكيهِ، السيد إبراهيم عيسى والمرحوم نمر شكري يعقوب، أول مرحلة من مراحل البناء في الطابق الأرضي، كما وتابعوا تقديم المساعدات في المراحل اللاحقة.</p><br>
+                                <div class="photo-container">
+                                    <div>
+                                        <img id="beino" src="https://i.postimg.cc/TYPT5x5N/image.jpg">
+                                        <h5 id="beino-d" dir="auto">بينوا حبيب</h5>
+                                    </div>
+                                    <div>
+                                        <img id="deeb" src="https://i.postimg.cc/bNFpQ5Qy/image.jpg">
+                                        <h5 id="deeb-d" dir="auto">ديب مارون</h5>
+                                    </div>
+                                </div>
+                                <p id="harakat-p5" dir="auto">هذان الرجلان العزيزان هما بمثابة جناحين لا أستطيع أن أطير بدونهما أو بدون أحدهما. فإني أشكرهما من كل القلب باسمي وباسم أبناء الرعية.</p><br>
+                                <p id="harakat-p6" dir="auto"><b>جوقة الكنيسة: </b>تخدم القداس والاحتفالات الدينية، وبأصواتها الجميلة تنقل المؤمنين من الأرضيات إلى السماويات؛ كما وأنها تهتم بتنظيف الكنيسة وتزيينها في المناسبات الكبيرة.</p>
+                                <img id="choir" src="https://i.postimg.cc/TwGDs5mQ/image.jpg"><br><br>
+                                <p id="harakat-p7" dir="auto"><b>أخوية الحبل بلا دنس: </b>تجتمع مرة في الأسبوع للصلاة والتأمل في الكتاب المقدس والليتورجيا المارونية؛ كما وتهتم بزيارة العجزة وتساعد في تنظيف الكنيسة؛ وبعد قداس الأحد، تجهز القهوة والتضييفات لأبناء الرعية في قاعة الكنيسة وللضيوف من خارج القرية.</p><br>
+                                <img id="danas" src="https://i.postimg.cc/L6w5ggy5/image.jpg"><br>
+                                <p id="harakat-p8" dir="auto"><b>كونسرت: </b>في السنوات الأخيرة، أقيم في كنيسة مار مارون عدة كونسيرتات (تراتيل وموسيقى دينية كلاسيكية) ومعظمها بإدارة السيدة "عادة پيلچ" وباشتراك العشرات من خيرة العازفين والمرنمين وما بين 500- 800 من كل انحاء البلاد. وقد ساهمت هذه التجمعات بإنعاش الاقتصاد في القرية، مثل المطاعم والمتاجر، وبوضع قرية الجش على خريطة البلاد السياحية. وقد ساهم بجزء من التكاليف الميلياردير "ستف فاردهايمر"؛ هذا الرجل الكبير والخلوق أقام مصنعًا قرب القرية يشغل عددًا كبيرًا من أبنائنا. يوما، دعاني إلى مكتبه للمشاركة في الفطور والتحدث عن وضع القرية الاقتصادي. حضرت في الموعد المحدد إلى مكتبه، فاستقبلني مدير أعماله الذي اتصل به قائلاً: "إن حضرة الأب قد وصل." ولكنه كان قد نسي الموعد وذهب ليتفقد أحد مصانعه في منطقة نهاريا، فأجابه: "سأكون بعد خمس دقائق." وما هي إلا لحظات حتى هبطت طائرته الصغيرة بجانب المكتب فدخل واعتذر عن التأخر. لقد ترك هذا الرجل البالغ من العمر 95 عامًا الأثر الكبير في نفسي.</p><br><br>
+                                <p id="harakat-p9" dir="auto"><b>الرحلات الدينية: </b>اعتادت الرعية تنظيم رحلات سنوية الى المزارات الرئيسية في أوروبا، وبشكلٍ خاص لورد وفاطمة؛ كما ونظمت رحلاتٍ سنوية للأماكن المقدسة في القدس وبيت لحم والناصرة وطبريا. شملت هذه الرحلات زيارة إيطاليا وفرنسا وإسبانيا ست مرات. وزيارة إسبانيا والبرتغال أربع مرات، ورحلة إلى اليونان (أثينا وبعض الجزر). رحلة الى شمال أوروبا: پاريس، بروكسيل، كولونيا، أمستردام، لاهاي، رمس، أميان، روون، ليزيه، ڤرساي، شارتر ولندن. رحلة إلى روسيا: موسكو وپيترسبورچ. رحلة إلى الدول الإسكندناڤية: السويد، الدانمارك، فنلندا، النروج. رحلة إلى مصر: القاهرة وجبل القديسة كاترينا مع الإخوة الموعوظين. رحلتان الى الأردن للقاء غبطة البطريرك صفير وتدشين كنيسة مار شربل في عمان. رحلتان الى لبنان بمعية الشماس العزيز صبحي مخول (مشكورًا على جهوده)، لزيارة عنايا، حريصا، وادي القديسين وغيرها من الأماكن المقدسة. لقد شارك في هذه الرحلات (وعددها نحو 20) أكثر من 700 شخص. وأهم الرحلات كانت سنة 1998 بمناسبة تطويب المكرم نعمة الله الحرديني وسنة 2001 بمناسبة تقديس الأخت رفقا، وسنة 2004 تقديس الطوباوي نعمة الله الحرديني.</p><br><br>
+                                <div class="photo-container">
+                                    <div class="pray-trips">
+                                        <img id="safy" src="https://i.postimg.cc/gjx0J3ZY/image.jpg">
+                                        <h5 id="safy-d" dir="auto">مع العملاق وديع الصافي في روما بمناسبة تطويب الحرديني عام 1998</h5>
+                                    </div>
+                                    <div class="pray-trips">
+                                        <img id="barca" src="https://i.postimg.cc/kXF395jV/1.jpg">
+                                        <h5 id="barca-d" dir="auto">رحلة الرعية الى برشلونة 2005</h5>
+                                    </div>
+                                    <div class="pray-trips">
+                                        <img id="roma" src="https://i.postimg.cc/WpZcW8gw/2.jpg">
+                                        <h5 id="roma-d" dir="auto">رحلة الرعية الى روما عام 2005</h5>
+                                    </div>
+                                    <div class="pray-trips">
+                                        <img id="espania" src="https://i.postimg.cc/ZKht1NLt/3.jpg">
+                                        <h5 id="espania-d" dir="auto">رحلة الرعية الى إسبانيا عام 2009</h5>
+                                    </div>
+                                    <div class="pray-trips">
+                                        <img id="baby" src="https://i.postimg.cc/26sRjLRW/image.jpg">
+                                        <h5 id="baby-d" dir="auto">مع غبطة البطريرك بشارة الراعي والطفل بشارة الياس سليمان</h5>
+                                    </div>
+                                    <div class="pray-trips">
+                                        <img id="tringle" src="https://i.postimg.cc/SRc0nQkv/image.jpg">
+                                        <h5 id="tringle-d" dir="auto">مع المثلث الرحمات البطريرك صفير</h5>
+                                    </div>
+                                </div><br><br><br>
+                                <p id="harakat-p10" dir="auto"><b>صندوق الرحمة: </b>منذ الثمانينات بدأت الرعية في تقديم المواد الغذائية والأدوية للإخوة في جنوب لبنان. وسنة 2000، قدمت نحو 21 طنا من المواد الغذائية لإخوتنا الفلسطينيين في القدس، شارك في بعض منها الأخوة من الطائفة الإسلامية. عام 2021، قدمت الرعية، بمبادرة الحركة الرسولية، مواد غذائية ومواد تنظيف للأيتام في بيت لحم، زاد وزنها على خمسة أطنان. وخلال السنوات القليلة الماضية، تبرعت الرعية بحوالي 30 ألف دولار للمحتاجين في سوريا ولبنان، بواسطة بعد الأساقفة الموقرين. وفي عامي 2020 و 2021 (فترة وباء الكورونا)، تبرعت الرعية بمبلغ 150 ألف دولار لأهلنا أبناء كفر برعم والجش في لبنان. كما ولم تقصر الرعية في مساعدة المحتاجين المحليين. وهذا غيضٌ من فيض.</p><br>
+                                <img id="aytam-help" src="https://i.postimg.cc/1tJJRfgH/image.png">
+                                <h5 id="aytam-help-d" dir="auto">مساعدات للأيتام، 2021</h5>
+                            </div><hr>
+                            <p id="maroon-p4" dir="auto"><b>دير الراهبات:</b>سنة 1956، وبمساعدة المرحوم المونسنيور فرغاني، أنشئ الدير على أرض الوقف وأقامت فيه راهبات الوردية اللواتي خدمن الرعية حتى سنة 1997. بعد ذلك، قدمت راهبات القديسة تريز الطفل يسوع المارونيات لخدمة الرعية. سنة 1991، أضيف على الطابق الأول من الدير ما يزيد على 80 م2، وفي سنة 1998، أضيفت 80 م2  أخرى على الطابق الثاني، وجهز الدير بكامله بأثاث جديد بعد ترميم جذري للبناء القديم. عام 2018، قمنا بترميم إضافي داخل الدير، كما وقمنا بترصيع الواجهتين الشمالية والغربية بالحجر. خدمت راهبات الوردية الرعية لمدة 40 سنة، وكذا فعلت راهبات القديسة تريز الطفل يسوع لمدة 20 سنة، ولا ننسى هؤلاء الراهبات اللاتي عملن في الرعية في صلاتنا.</p><br>
+                            <div class="photo-container">
+                                <div class="maroon-photos">
+                                    <img id="deer" src="https://i.postimg.cc/m2QBCtL1/image.jpg">
+                                    <h5 id="deer-d" dir="auto">الدير في الطابق الثاني، والعيادة في الطابق الأول</h5>
+                                </div>
+                            </div>
+                            <div class="photo-container">
+                                <div class="maroon-photos">
+                                    <img id="sis-noel" src="https://i.postimg.cc/BvV6ZpGf/image.jpg">
+                                    <h5 id="sis-noel-d" dir="auto">الأخت نويل ظاهر</h5>
+                                </div>
+                                <div class="maroon-photos">
+                                    <img id="sis-vivian" src="https://i.postimg.cc/bvJrjMWR/image.jpg">
+                                    <h5 id="sis-vivian-d" dir="auto">المرحومةالأخت فيفيان معلوف</h5>
+                                </div>
+                                <div class="maroon-photos">
+                                    <img id="sis-michlin" src="https://i.postimg.cc/cLTC2Z9H/image.jpg">
+                                    <h5 id="sis-michlin-d" dir="auto">الأخت ميشلين منصور</h5>
+                                </div>
+                                <div class="maroon-photos">
+                                    <img id="sis-sayeda" src="https://i.postimg.cc/v8zWbRSJ/image.jpg">
+                                    <h5 id="sis-sayeda-d" dir="auto">الأخت سيدة طنوس</h5>
+                                </div>
+                            </div><br>
+                            <p id="maroon-p5" dir="auto"><b>عمارة الوقف: </b>لما كانت هنالك قطعة الأرض غير مستغلة بين دير الراهبات والشارع الرئيسي، قمنا ببناء طابقين، تزيد مساحة كل منها على 100 م2، وقد بلغت تكاليف هذا البناء 75 ألف دولار؛ منذ سنة 2000، يؤمن هذا البناء دخلا شهريا معقولا للكنيسة من إيجارات المكاتب فيه.</p>
+                            <div class="photo-container">
+                                <div class="maroon-photos">
+                                    <img id="amaret-alwaqef" src="https://i.postimg.cc/x1zVhNvg/image.jpg">
+                                    <h5 id="amaret-alwaqef-d" dir="auto">عمارة الوقف</h5>
+                                </div>
+                            </div><br>
+                            <p id="maroon-p6" dir="auto"><b>حديقة العذراء: </b>في الساحة الأمامية الجنوبية للكنيسة وعلى مساحة نحو 1،000 م2، أقمنا حديقة تكريما للعذراء مع تمثال في وسطها. أنجز العمل في شهر أيار من عام 2006، واحتفل بتدشين الحديقة في آخر الشهر المريمي. كلّف مشروع الحديقة ما يزيد على 10،000 دولار.</p>
+                            <div class="photo-container">
+                                <div class="maroon-photos">
+                                    <img id="hadeket-alaadra" src="https://i.postimg.cc/7ZmWZg3q/image.jpg">
+                                    <h5 id="hadeket-alaadra-d" dir="auto">حديقة العذراء</h5>
+                                </div>
+                            </div><br>
+                            <p id="maroon-p7" dir="auto"><b>سيارة الكنيسة: </b>تستعمل هذه السيارة لنقل الموتى من المشفى إلى الكنيسة وبعدها إلى المدافن في الجش أو كفر برعم. من كل القلب، أشكر أخي العزيز إيلي توفيق زكنون، الميكانيكي القدير، الذي يعتني بهذه السيارة، ويقوم بالإصلاحات والفحوصات السنوية والترخيص على حسابه الخاص، بالإضافة لتبرعاته للكنيسة.</p>
+                            <div class="photo-container">
+                                <div class="maroon-photos">
+                                    <img id="seyara" src="https://i.postimg.cc/qvDH5fZc/image.jpg">
+                                    <h5 id="seyara-d" dir="auto">سيارة الكنيسة</h5>
+                                </div>
+                            </div><br>
+                        </div>
+                        
+                        <div class="jish-content" id="Jsayeda" style="display: none;"><!-- Content for harakat -->
+                            <h2 id="Jsayeda-header">كنيسة السيدة</h2>
+                            <p id="Jsayeda-p1" dir="auto">تقف كنيسة السيدة شاهدا على الحضور الماروني في الجش لعشراتِ عشراتٍ من السنين. لا نعرف سنة بناء الكنيسة، إلا أننا نعرف أنه أعيد بناؤها عام 1838، أي سنة بعد الزلزال الذي دمر القرية. في الكنيسة حجر يؤرخ هذا الأمر، وقد نقش عليه:</p><br>
+                            <p id="Jsayeda-poem" style="text-align: center;" dir="auto">تجدد بنــــــاء هذا المقام&nbsp;&nbsp;&nbsp;بعد الخـــراب والانهــــــــــدام<br>مـن زلـزلة قــــد أزعجـت&nbsp;&nbsp;&nbsp;كــل البرايــــــــــــا والأنــــــام<br>بوجود...راعيــــنا الجليـل&nbsp;&nbsp;&nbsp;المطران عبدالله ذي الاحترام<br>عن يــد أحــــقـر الورى&nbsp;&nbsp;&nbsp;الخوري اسطفان يرجو الختام<br>على شأن ذلك قد أرخوا&nbsp;&nbsp;&nbsp;زال وجع الاغتمام سنة 1838</p><br>
+                            <p id="Jsayeda-p2" dir="auto">رممت الكنيسة عدة مرات، وكان الترميم الأخير عام 2021.</p><br>
+                            <img id="Jsayeda-after1" src="https://i.postimg.cc/7ZL7172s/2021.jpg">
+                            <img id="Jsayeda-after2" src="https://i.postimg.cc/vZSn0B7Q/2021-2.jpg"><br>
+                            <h5 id="Jsayeda-after-d" style="text-align: center;">كنيسة السيدة بعد ترميم 2021</h5>
+                        </div>
+                        
+                        <div class="jish-content" id="botros" style="display: none;"><!-- Content for harakat -->
+                            <h2 id="botros-header">كنيسة مار بطرس وبولس</h2>
+                            <p id="botros-p1" dir="auto">منذ تسلمت خدمة الرعية، عرف أن مسؤوليتي ليست فقط تجاه أبناء رعيتي، بل تتخطاها لتشمل أبناء رعية مار بطرس وبولس للروم الكاثوليك، وخاصة بين السنوات 1975 و 2000، إذ كنت الكاهن الوحيد في القرية، وكلفت بخدمة الرعية الشقيقة، ولم أفرق أبدا بين بطرس ومارون، فكلنا للمسيح. وأشهد هنا أن إخوتنا الروم الكاثوليك ساهموا مثل إخوتهم الموارنة في بناء كنيسة مار مارون، وتبرعوا بالمال والعمل، ولا أنسى بالتحديد المرحومين نخلة زكريا حداد وشقيقه أديب حداد، والمهندس الفذّ جورج يوسف حداد.</p><br>
+                            <div class="photo-container">
+                                <div class="botros-photos">
+                                    <img id="hadi" src="https://i.postimg.cc/1txfd7Wt/image.jpg">
+                                    <h5 id="hadi-d" dir="auto">الأب هادي قسيس: كاهن رعية مار بطرس وبولس للروم الكاثوليك في الجش؛<br>ولد في 12.1.1975؛ سيم كاهنا في 25.3.2017 </h5>
+                                </div>
+                                <div class="botros-photos">
+                                    <img id="simon" src="https://i.postimg.cc/zfHy0YF6/image.jpg">
+                                    <h5 id="simon-d" dir="auto">الأب سيمون حداد: معاون كاهن رعية مار بطرس وبولس للروم الكاثوليك في الجش؛<br>ولد في 28.5.1964؛ سيم كاهنا في 27.3.2021</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jish-content" id="Jhistory" style="display: none;"><!-- Content for Jhistory -->
+                        <h2 id="Jhistory-header">تاريخ</h2>
+                        <p id="Jhistory-p1" dir="auto">قرية تاريخية، عرفت في الزمن الغابر باسم "جسكالا." منها يوحنان الجشي قائد ثورة اليهود ضد الرومان، ومنها عائلة القديس بولس قبل مغادرتها إلى طرسوس. في كتابه مشاهير الرجال، كتب القديس إيرونيموس (+420)، أحد آباء الكنيسة، ما يلي:</p><br>
+                        <p id="Jhistory-p2" dir="auto" style="margin: 0 13vw 0 13vw;">"بولس، والذي كان يُدعى سابقاً شاول ، كان رسولاً من خارج الرسل الاثني عشر، من قبيلة بنيامين ومدينة جسكالا في اليهودية. عندما احْتلَّ الرومان جسكالا، غادر بولس مع والديه إلى طرسوس في كيليكية. أرسله والداه إلى أورشليم لدراسة الشريعة، فتلقى تعليمه على يد جملائيل، وهو علامة يذكره لوقا. ولكن بعد أن شهد وفاة الشهيد إسطفان وتلقى رسائل من رئيس كهنة الهيكل من أجل اضطهاد أولئك الذين آمنوا بالمسيح ، سافر إلى دمشق. وإذ تقيد بالإيمان عن طريق الوحي ، كما هو مكتوب في أعمال الرسل، تحول من مضطهد إلى آنية مختارة"</p><br>
+                        <p id="Jhistory-p3" dir="auto">ويذكر بعض علماء الكتاب المقدس أن السيد المسيح دخل القرية في طريقه من طبريا إلى منطقة صور وصيدا عبر وادي العمود.</p><br>
+                        <p id="Jhistory-p4" dir="auto">تقع الجش في الجليل الأعلى على ارتفاع 835 مترا. بحسب إحصائيات الدولة لعام 2019، يسكن في القرية 3،105 أشخاص، منهم 1،524 ذكرا و 1،580 أنثى. منهم حوالي37% (1،148) مسلمون، 11% (341) روم كاثوليك و 52% (1،614) موارنة. فيها مسجد قديم وثلاث كنائس: كنيسة مار بطرس وبولس للروم الكاثوليك (بنيت عام 1906)، كنيسة السيدة للموارنة (أعيد بناؤها عام 1838)، وكنيسة مار مارون (دشنت في 24.8.1996).</p><br>
+                        <p id="Jhistory-p5" dir="auto">تبلغ مساحة أراضي الجش حوالي 12،500 دونما، منها حوالي 2،500 دونم تحت الري وتحتاج إلى 935،000 متر مكعب من المياه. ومن الجدير ذكره أن الزراعة في الجش متقدمة، والفواكه لذيذة بسبب الأرض الخصبة والطقس الرائع.</p><br>
+                        <p id="Jhistory-p6" dir="auto">هنالك مدرستان في القرية، مدرسة ابتدائية تضم حوالي 373 طالبا يتعلمون من الصف الأول وحتى الثامن ومدرسة ثانوية تابعة لكنيسة الروم الكاثوليك ويتعلم فيها حوالي 177 طالبا. تتميز القرية بالمستوى الثقافي العالي لطلابها وطالباتها. فهنالك العشرات ممن يحملون اللقب الأول، وعدد لا بأس به مممن يحملون اللقب الثاني وآخرون يحملون اللقب الثالث. بحسب إحصائيات الدولة لعام 2019، 40.7% من سكان القرية، من عمر 25-54 سنة، يحملون لقبا جامعيا. أيضا، وبحسب إحصائيات الدولة، فمعدل دخل الفرد الشهري يبلغ 1،341 دولارا أمريكيا.</p><br>
+                        <p id="Jhistory-p7" dir="auto">في القرية فرع بريد، فرع لبنك لئومي، صندوق مرضى تابع لكلاليت وآخر للئوميت، بيت الهستدروت، بيت المسنين، مركز جماهيري، ملعب كرة قدم، وعدة ملاعب كرة سلة.</p><br>
+                        <p id="Jhistory-p8" dir="auto"><b>كهنة رعية الجش ومعاونيهم: </b>أول من خدم الرعية كان الأب اسطفان دخول (حوالي عام 1800)، خلفه: الأب يوسف دخول (1855-1902)؛ الأب يوسف عقل (1901-1938) والأب يوسف دخول علم (1917-1933) والأب الياس سوسان (1901-1956)؛ الأب يوسف سوسان (1931-1967)، والأب كامل فرح (1976-1971). منذ سنة 1971، يخدم الرعية الأب بشارة سليمان. عاونه، بين الأعوام 2008-2010، الأب سامر زكنون، ومنذ عام 2015، الأب ساندي حبيب.</p>
+                    </div>
+                </div>
+
+                <div class="info-content" id="berem" style="display: none;"><!-- Content for berem -->
+                    <h2>كفر برعم</h2>
+                    <button class="berem-button" style="margin-bottom: 50px;" onclick="showBeremSubSection('Bchurch')">الكنيسة</button>
+                    <button class="berem-button" style="margin-bottom: 50px;" onclick="showBeremSubSection('Bhistory')">تاريخ</button>
+                    
+                    <div class="berem-content" id="Bhistory" style="display: none;"><!-- Content for Bhistory -->
+                        <h2>تاريخ</h2><br>
+                        <p id="Bhistory-p1" dir="auto">هي قرية قديمة تقع على الحدود اللبنانية. هُجِّر سكانها سنة 1948؛ منهم من رحل الى لبنان ومنهم إلى الجش. حكمت محكمة العدل العليا سنة 1952 لصالح أبناء كفربرعم، ولكن الحكومات المتعاقبة رفضت تنفيذ الحكم، لا بل قامت إحداها بإعطاء الأمر بتدمير القرية سنة 1953. كان عدد السكان قبل التهجير حوالي 1،000 نسمة (150 بيتا) ومساحة أراضيها حوالي 12،500 دونم، منها حوالي 1،000 دونم مسجلة على اسم الوقف الماروني.</p><br>
+                    </div>
+                    
+                    <div class="berem-content" id="Bchurch" style="display: none;"><!-- Content for church -->
+                        <h2>كنيسة السيدة في كفر برعم</h2>
+                        <p id="Bchurch-p1" dir="auto"> لا شك أن تاريخ هذه الكنيسة يعود الى أواخر القرن الثامن عشر. سنة 1860، أُحرقت الكنيسة بما فيها من محتويات وسجلات، وبعد اكثر من عشر سنوات قام الأهالي ببناء الكنيسة الحالية. عام 1926، ومع بداية استخدام الإسمنت في المنطقة، قام أهل برعم بصب سطح الكنيسة بالإسمنت، وكانوا قد جمعوا البحص اللازم من مسلان القرية. منذ التهجير، سنة 1948، أُغلقت الكنيسة ومنع أي شخص من فتحها، إلا أن أهالي برعم، وفي سنة 1972، قصدوا الكنيسة وفتحوها واعتصم المئات منهم في قريتهم المنكوبة، فاصطدموا بقوات الشرطة والجيش، فتم القبض على كاهن الرعية، الأب بشارة سليمان، وأربعة عشر رجلا وزجهم في السجن. أجريت لهم محكمة في اليوم التالي، وبرئت ساحتهم. قام الأهالي بترميم الكنيسة، وخلال السنوات التالية أقيمت العديد من العمادات والأكاليل هناك، وتم الاحتفال بالقداس في أعياد الميلاد والشعانين والفصح. ومنذ عام 2009، بدأ الاحتفال بالقداس الإلهي أسبوعيا في الكنيسة.</p><br>
+                        <div class="photo-container">
+                            <div class="berem-photos">
+                                <img id="Bchurch-photo" src="https://i.postimg.cc/sxHgtGGf/image.jpg">
+                                <h5 id="Bchurch-photo-d" dir="auto">كنيسة السيدة في كفر برعم</h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="Bmadafen" src="https://i.postimg.cc/Zn5q7xRD/image.jpg">
+                                <h5 id="Bmadafen-d" dir="auto">مدافن كفر برعم</h5>
+                            </div>
+                        </div><br>
+                        <p id="Bchurch-p2" dir="auto"><b>كهنة رعية كفر برعم: </b>أول من خدم الرعية كان الأب بولس مطر (1760)، خلفه: الأب أندراوس أبو فارس (1770-1801)؛ الأب يوسف ريشا (1785-1806)؛ الأب الياس يوسف ريشا (1807-1857)؛ الأب يوسف الياس ريشا (1855-1913)؛ الأب يوسف الشوفاني (1860-1899) والأب منصور عاصي (1860-1899) والأب موسى الياس سوسان (1860-1900)؛ الأب الياس سوسان (1901-1948) والأب يوسف الياس (1911-1948)؛ الأب يوسف سوسان (1931-1948)؛ الأب بشارة سليمان (1972-2009)؛ الأب سامر زكنون (2009-2010)؛ الأب عفيف مخول (2010-2016)؛ الأب يوسف يعقوب (2016-2018)، والأب سليم سوسان (2018-الآن).</p>
+                    </div>
+                </div>
+
+                <div class="info-content" id="ekliros" style="display: none;"><!-- Content for ekliros -->
+                    <h2 id="ekliros-heading" dir="auto">إكليروس الأبرشية والنيابتين البطريركيتين</h2>
+                    <div class="photo-container">
+                        <div class="photo-item">
+                            <img id="Ebeshara" src="https://i.postimg.cc/4dPXJdxz/image.jpg" alt="Photo 1">
+                            <h5 id="Ebeshara-d" dir="auto">الأب بشارة سليمان:<br> كاهن رعية مار مارون؛ ولد في 1.8.1947؛ سيم كاهنا في 14.8.1971</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Esaleem" src="https://i.postimg.cc/t7GgV1cj/image.png" alt="Photo 2">
+                            <h5 id="Esaleem-d" dir="auto">الخورأسقف سليم سوسان:<br> ولد 02.04.1943؛ سيم كاهنا في 14.09.1967</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Emotran" src="https://i.postimg.cc/dVRBZDgq/سيادة_المطران_موسى_الحاج.jpg" alt="Photo 3">
+                            <h5 id="Emotran-d" dir="auto">سيادة المطران موسى الحاج السامي الاحترام<br>رئيس أساقفة حيفا والأراضي المقدسة للموارنة والنائب البطريركي على القدس والأراضي الفلسطينية والمملكة الأردنية؛ ولد في 19.2.1954؛ سيم كاهنا في 14.8.1980 وأسقفا في 28.7.2012</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Enaji" src="https://i.postimg.cc/cHZwyNmX/البرديوط_ناجي_يعقوب.jpg" alt="Photo 4">
+                            <h5 id="Enaji-d" dir="auto">البرديوط ناجي يعقوب:<br>ولد في 26.02.1956؛ سيم كاهنا في 05.01.1986</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Eafif" src="https://i.postimg.cc/1XSKRqKh/الأب_عفيف_مخول.jpg" alt="Photo 5">
+                            <h5 id="Eafif-d" dir="auto">الأب عفيف مخول:<br>كاهن رعية سيدة الوردية-عكا والنائب الأسقفي العام؛ ولد في 2.4.1952؛ سيم كاهنا في 28.8.1983</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Eyousef" src="https://i.postimg.cc/FR6gXSkx/image.jpg" alt="Photo 6">
+                            <h5 id="Eyousef-d" dir="auto">الأب يوسف عيسى:<br>كاهن رعية سيدة البشارة في الناصرة؛ ولد في 16.12.1951؛ سيم كاهنا في 1.10.1977</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Ejousef" src="https://i.postimg.cc/xdLDk4Zb/الأب_جوزيف_سويد.jpg" alt="Photo 7">
+                            <h5 id="Ejousef-d" dir="auto">الأب جوزيف سويد:<br>: كاهن رعية مار شربل في عمان؛ ولد 26.8.1966، سيم كاهنا في 30.5.1997</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Enaael" src="https://i.postimg.cc/YC5BCHdH/الأب_نائل_حلو.jpg" alt="Photo 8">
+                            <h5 id="Enaael-d" dir="auto">الأب نائل حلو:<br>معاون كاهن رعية سيدة البشارة في الناصرة؛ ولد في 24.02.1964، سيم كاهنا في 14.09.2002</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Esobhe" src="https://i.postimg.cc/W3jR07RY/الشماس_الإنجيلي_صبحي_مخول.jpg" alt="Photo 9">
+                            <h5 id="Esobhe-d" dir="auto">الشماس الإنجيلي صبحي مخول:<br>ولد في 10.7.1957؛ سيم شماسا في 28.6.1998</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Eyyaqoub" src="https://i.postimg.cc/Kv9G7j5r/الأب_يوسف_يعقوب.jpg" alt="Photo 10">
+                            <h5 id="Eyyaqoub-d" dir="auto">الأب يوسف يعقوب:<br>كاهن رعية مار لويس الملك في حيفا؛ ولد في 30.6.1977؛ سيم كاهنا في 26.12.2009</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Esamer" src="https://i.postimg.cc/GtsPLpkn/image.jpg" alt="Photo 11">
+                            <h5 id="Esamer-d" dir="auto">الأب سامر زكنون:<br>ولد في 14.4.1971؛ سيم كاهنا في 14.8.2004</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Eanton" src="https://i.postimg.cc/7ZfxK4sv/الأب_أنطوان_الدويهي.jpg" alt="Photo 12">
+                            <h5 id="Eanton-d" dir="auto">الأب أنطوان الدويهي:<br>كاهن رعية مار مارون في القدس؛ ولد في 27.5.1967؛ سيم كاهنا في 4.6.1994</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Erodi" src="https://i.postimg.cc/kGc3wY3h/الأب_رودي_نورا.jpg" alt="Photo 13">
+                            <h5 id="Erodi-d" dir="auto">الأب رودي نورا:<br>كاهن رعية مار بطرس وبولس؛ ولد في 18.2.1987؛ سيم كاهنا في كنيسة مار يوسف للاتين، حيفا، في 23.6.2017</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Emagdy" src="https://i.postimg.cc/52Wgt877/image.jpg" alt="Photo 14">
+                            <h5 id="Emagdy-d" dir="auto">الأب مجدي هاشول:<br>: كاهن رعية مار شربل في عسفيا؛ ولد في 09.11.1982؛ سيم كاهنا في 17.8.2019</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Esandey" src="https://i.postimg.cc/sDKNfWz6/25425.jpg" alt="Photo 15">
+                            <h5 id="Esandey-d" dir="auto">الأب ساندي حبيب:<br>معاون كاهن رعية مار مارون في الجش؛ ولد في 16.10.1981؛ سيم كاهنا في 10.10.2015</h5>
+                        </div>
+                    </div><br><br>
+                    <h2 id="ekliros-Secondheading" dir="auto">الإكليروس الذين خدموا رعيتنا</h2>
+                    <div class="photo-container">
+                        <div class="photo-item">
+                            <img id="Eatnas" src="https://i.postimg.cc/zf0Fp6J6/الشماس_أتناس_عقل.jpg" alt="Photo 16">
+                            <h5 id="Eatnas-d" dir="auto">الشماس أتناس عقل:<br>توفي في 20.11.1964 عن عمر 62 عاما؛ يعود إليه الفضل ببقاء سكان الجش في قريتهم.</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="EYakel" src="https://i.postimg.cc/QNPSR2pr/الخوري_يوسف_عقل.jpg" alt="Photo 17">
+                            <h5 id="EYakel-d" dir="auto">الخوري يوسف عقل:<br>ولد سنة 1873؛ سيم كاهنا سنة 1901؛ توفي سنة 1938</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="EYalam" src="https://i.postimg.cc/wMSVLN6B/الخوري_يوسف_علم.jpg" alt="Photo 18">
+                            <h5 id="EYalam-d" dir="auto">الخوري يوسف علم:<br>سيم كاهنا سنة 1917، وتوفي سنة 1933</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="EYsosan" src="https://i.postimg.cc/GpcjFd1v/image.jpg" alt="Photo 19">
+                            <h5 id="EYsosan-d" dir="auto">الخوري يوسف سوسان:<br>ولد في 18.6.1907؛ سيم كاهنا في 22.9.1931؛ توفي في 10.8.1987</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="EYelias" src="https://i.postimg.cc/50yqrgy0/image.jpg" alt="Photo 20">
+                            <h5 id="EYelias-d" dir="auto">الخوري يوسف الياس:<br>ولد سنة 1865؛ سيم كاهنا في 15.7.1911؛ توفي في لبنان في 5.3.1974<h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="Eelias" src="https://i.postimg.cc/8P6wDZHf/image.jpg" alt="Photo 21">
+                            <h5 id="Eelias-d" dir="auto">الخوري الياس سوسان:<br>ولد سنة 1868؛ سيم كاهنا في 6.5.1901؛ توفي في 10.1.1956</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-content" id="statistics" style="display: none;"><!-- Content for statistics -->
+                    <h2 id="statistics-heading" dir="auto">إحصائيات</h2><br><br>
+                    <h3 id="segel-alaomad" dir="auto">من سجل العماد</h3><br>
+                    <p id="statistics-aomad-p1" dir="auto">منذ استلامي خدمة الرعية، تعمّد 1،242 شخصا، منهم 641 ذكرا و601 أنثى. عمّدت منهم 1،128 (91%) شخصا، والباقي عمّدهم كهنة آخرون بالنيابة عني. أول من عمّدت كانت فيرا حنا مطانس مخول وذلك في 2.9.1971.</p><br>
+                    <img id="statistics-img1" src="https://i.postimg.cc/nLsqfM2n/statistics1.png"><br><br>
+                    <p id="statistics-aomad-p2" dir="auto">الأغلبية الساحقة (890 شخصا) من المعمدين كانت ممن هم دون الأربع سنوات؛ تعمد منهم 206 أشخاص وهم دون السنة من عمرهم، و392 شخصا وهم في عمر السنة، و 177 وهم في عامهم الثاني و 115 في عامهم الثالث.</p><br>
+                    <img id="statistics-img2" src="https://i.postimg.cc/6Q2wVNWH/statistics2.png"><br><br>
+                    <p id="statistics-aomad-p3" dir="auto">حوالي ربع المعمدين (331 شخصا، 27%) أخذوا اسما جديدا في العماد. أكثر الأسماء شيوعا بين الإناث هو اسم تريز (53 مرة) يليه مريم (45 مرة)، أما بين الذكور، فيأتي في المرتبة الأولى اسم شربل (43 مرة) يليه اسم مارون (22 مرة). </p><br>
+                    <p id="statistics-aomad-p4" dir="auto">كما ذكر سابقا، خلال الخمسين سنة الفائتة، تعمد في الرعية 1،242 شخصا. تعمد منهم 205 في سنوات السبعينات و216 في الثمانينات، بينما شهدت سنوات التسعينات أكبر عدد من المعمدين، بلغ 285 معمدا. في العقد الأول من القرن الواحد والعشرين، تعمد 277 شخصا، وفي العقد الثاني 241 شخصا. السنة التي شهدت أكبر عدد عمادات كانت سنة 1998 مع 39 عمادا، أما السنة التي شهدت أقل عدد عمادات فكانت سنة 2020 مع 10 عمادات، ويمكن عزو ذلك إلى جائحة الكورونا. </p><br>
+                    <img id="statistics-img3" src="https://i.postimg.cc/MprfKx3t/statistics3.png"><br><br>
+                    <p id="statistics-aomad-p5" dir="auto">لم يعتمد كل المسجلين في سجل العماد في ذات المكان. فبين الأعوام 1971 و 1986، كان يحتفل بسر العماد إما في كنيسة السيدة في برعم أو في دير الراهبات أو في كنيسة السيدة في الجش. منذ عام 1986، وعلى إثر افتتاح القاعة الكبيرة أسفل كنيسة مار مارون، انتقلت الاحتفالات الليتورجية إليها، وفي العام 1996 إلى الكنيسة؛ يشار إلى أن  كنيسة السيدة في الجش ونظيرتها في برعم بقيتا تخدمان أبناء الرعية حتى يومنا هذا. نحو 60% من المعمدين تعمدوا في صرح كنيسة مار مارون؛ و13% في دير الراهبات في الجش وما يوازي هذه النسبة في كنيسة السيدة في برعم؛ وتعمد ما يقارب 9% في كنيسة السيدة في الجش، أما الباقي فتعمدوا خارج الرعية. أول من تعمد في كنيسة السيدة في برعم، بعد افتتاحها عام 1972، كان نصرالله سامي زهرة؛ وأول من تعمد في صرح كنيسة مار مارون كان مطانس جوني عيسى عام 1986.</p><br>
+                    <img id="statistics-img4" src="https://i.postimg.cc/DfJTth1n/statistics4.png"><br><br><br><br><br>
+                    <h3 id="segel-alwafiyat" dir="auto">من سجل الوفيات</h3><br>
+                    <p id="statistics-wafat-p1" dir="auto">منذ 10.9.1971 وحتى لحظة كتابة هذه النشرة، توفي في الرعية 407 أشخاص؛ كان من بينهم 222 ذكرا و185 أنثى. دفن من بين المتوفين 214 شخصا في مدافن الجش، 192 شخصا في مدافن كفر برعم، وشخص واحد في مدافن رعية مار لويس للموارنة في حيفا.</p><br>
+                    <img id="statistics-img5" src="https://i.postimg.cc/QtyrF8WN/statistics5.png"><br><br>
+                    <p id="statistics-aomad-p2" dir="auto">إن استثنينا 24 شخصا لا نعرف أعمارهم من مجمل عدد المتوفين، فالمعدل العام لأعمار البقية هو نحو 75 سنة؛ معدل عمر الذكور المتوفين هو 72.7 سنة، أما معدل عمر الإناث المتوفيات فهو 78.6 سنة. أصغر من توفي كانت المرحومة ملكة سميح سليمان وهي ابنة تسعة أشهر. أما المعمرون ممن تخطوا عتبة المائة عام فكانوا المرحوم جريس يوسف زكنون (100 عام)، المرحومة ألمازة عقل خريش (101 عام)، المرحوم نصرالله مطانس زهرة (101 عام)، المرحوم إبراهيم حبيب مخول (102 عام)، المرحومة مسيحية عساف جبران (102 عام) والمرحوم جبران حبيب عيسى (102 عام).</p><br>
+                    <img id="statistics-img6" src="https://i.postimg.cc/RVznh41L/statistics6.png"><br><br>
+                    <p id="statistics-aomad-p3" dir="auto">من العدد الإجمالي للمتوفين المعروفة أعمارهم (383 شخصا)، أكثر من النصف (199 شخصا، 52%) توفوا وهم بعمر الثمانين فما فوق، بينما توفي 85 شخصا في عقدهم الثامن (أي عمر السبعينات)، 132 في عقدهم التاسع و67 في عقدهم العاشر.</p><br>
+                    <img id="statistics-img7" src="https://i.postimg.cc/JzQ1xWkm/statistics7.png"><br><br>
+                    <p id="statistics-aomad-p4" dir="auto">حوالي 47% من المتوفين في العقود الخمسة الأخيرة توفوا بين الأعوام 2000-2019. السّنتان اللتان شهدتا أقل عدد وفيات كانتا سنة 1985 و2012، إذ توفي في كل منهما شخص واحد فقط. أما السنة التي شهدت أكبر عدد وفيات فكانت سنة 2019، إذ توفي فيها 17 شخصا. معدل الوفيات خلال الخمسين سنة المنصرمة هو نحو 8 أشخاص في السنة الواحدة.</p><br><br>
+                    <h5 id="adad-alwafiyat" dir="auto">وفيات من أيلول 1971 وحتى حزيران 2021</h5><br>
+                    <div class="table-container">
+                        <div class="table-table">
+                            <table>
+                                <tr>
+                                    <th>السنوات</th>
+                                    <th>عدد الذكور</th>
+                                    <th>معدل العمر</th>
+                                    <th>عدد الإناث</th>
+                                    <th>معدل العمر</th>
+                                </tr>
+                                <tr>
+                                    <td>1971-1981</td>
+                                    <td>31</td>
+                                    <td>61.5</td>
+                                    <td>35</td>
+                                    <td>77.3</td>
+                                </tr>
+                                <tr>
+                                    <td>1981-1991</td>
+                                    <td>46</td>
+                                    <td>74.6</td>
+                                    <td>31</td>
+                                    <td>80.7</td>
+                                </tr>
+                                <tr>
+                                    <td>1991-2001</td>
+                                    <td>44</td>
+                                    <td>68.45</td>
+                                    <td>30</td>
+                                    <td>72.43</td>
+                                </tr>
+                                <tr>
+                                    <td>2001-2011</td>
+                                    <td>51</td>
+                                    <td>76.4</td>
+                                    <td>41</td>
+                                    <td>77.7</td>
+                                </tr>
+                                <tr>
+                                    <td>2011-2021</td>
+                                    <td>52</td>
+                                    <td>76.5</td>
+                                    <td>52</td>
+                                    <td>79</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h3 id="segel-zawaj" dir="auto">من سجل الزواج</h3><br>
+                    <p id="statistics-aomad-p4" dir="auto">منذ استلامي خدمة الرعية، تمت مباركة 485 إكليلا، توزعت كالتالي عبر العقود الخمسة الأخيرة: 64 إكليلا في العقد الثامن من القرن العشرين (سنوات السبعينات)، 95 في العقد التاسع، 102 في العاشر، وكانت الذروة في العقد الأول من القرن الواحد والعشرين مع 123 إكليلا، تلاهم 91 إكيلا بين الأعوام 2010-2019. باركت 455 (93.8%) من مجمل الأكاليل، وكان أول إكليل باركته للمرحوم جورج يوسف علم والسيدة لطيفة عفيف هلون.</p><br>
+                    <div class="photo-container">
+                        <div class="zawaj-photos">
+                            <img id="statistics-img8" src="https://i.postimg.cc/9fNFwR0K/statistics8.png">
+                        </div>
+                        <div class="zawaj-photos">
+                            <img id="statistics-img9" src="https://i.postimg.cc/433x3bfp/statistics9.png">
+                        </div>
+                    </div>
+                    <p id="statistics-aomad-p4" dir="auto">بوركت الأغلبية الساحقة من الأكاليل (304، 62.7%) في كنيسة مار مارون في الجش، بينما تمت مباركة 77 (15.9%) إكليلا في كنيسة السيدة في كفر برعم، 75 (15.5%) في كنيسة السيدة في الجش، 13 (2.6%) في كنيسة مار بطرس وبولس في القرية، 5 (1%) في دير الراهبات في الجش، والباقي (11، 2.2%) خارج القرية.</p><br>
+                    <img id="statistics-img10" src="https://i.postimg.cc/TPw0RSZG/statistics10.png"><br><br>
+                    <p id="statistics-aomad-p4" dir="auto">يتربع يوم السبت على قائمة الأيام التي احتفل فيها بسر الزواج؛ فعلى مدار الخمسين سنة الفائتة، شهد هذا اليوم 336 إكليلا، بينما شهد يوم الجمعة 70، والأحد 56، فالخميس 20. أما باقي أيام الأسبوع، فوقف كل منها شاهد على إكليل واحد فقط. </p><br><br><br>
+                    <div class="table-container">
+                        <div class="table-table">
+                            <table>
+                                <tr>
+                                    <th>السنة</th>
+                                    <th>العمادات</th>
+                                    <th>الزواجات</th>
+                                    <th>الوفيات</th>
+                                </tr>
+                                <tr>
+                                    <td>1971</td>
+                                    <td>11</td>
+                                    <td>1</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>1972</td>
+                                    <td>37</td>
+                                    <td>9</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>1973</td>
+                                    <td>33</td>
+                                    <td>12</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>1974</td>
+                                    <td>22</td>
+                                    <td>4</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>1975</td>
+                                    <td>27</td>
+                                    <td>8</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>1976</td>
+                                    <td>21</td>
+                                    <td>6</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>1977</td>
+                                    <td>22</td>
+                                    <td>12</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>1978</td>
+                                    <td>18</td>
+                                    <td>9</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>1979</td>
+                                    <td>14</td>
+                                    <td>3</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>1980</td>
+                                    <td>35</td>
+                                    <td>7</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>1981</td>
+                                    <td>10</td>
+                                    <td>8</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>1982</td>
+                                    <td>21</td>
+                                    <td>10</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>1983</td>
+                                    <td>11</td>
+                                    <td>13</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>1984</td>
+                                    <td>29</td>
+                                    <td>12</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>1985</td>
+                                    <td>31</td>
+                                    <td>7</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1986</td>
+                                    <td>21</td>
+                                    <td>12</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>1987</td>
+                                    <td>16</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>1988</td>
+                                    <td>17</td>
+                                    <td>9</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>1989</td>
+                                    <td>25</td>
+                                    <td>10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>1990</td>
+                                    <td>22</td>
+                                    <td>13</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>1991</td>
+                                    <td>32</td>
+                                    <td>10</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>1992</td>
+                                    <td>20</td>
+                                    <td>11</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>1993</td>
+                                    <td>27</td>
+                                    <td>13</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>1994</td>
+                                    <td>18</td>
+                                    <td>7</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>1995</td>
+                                    <td>31</td>
+                                    <td>10</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>1996</td>
+                                    <td>34</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>1997</td>
+                                    <td>35</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>1998</td>
+                                    <td>39</td>
+                                    <td>8</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>1999</td>
+                                    <td>27</td>
+                                    <td>14</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>2000</td>
+                                    <td>36</td>
+                                    <td>20</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>2001</td>
+                                    <td>28</td>
+                                    <td>14</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>2002</td>
+                                    <td>15</td>
+                                    <td>18</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>2003</td>
+                                    <td>29</td>
+                                    <td>10</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>2004</td>
+                                    <td>48</td>
+                                    <td>4</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>2005</td>
+                                    <td>29</td>
+                                    <td>15</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>2006</td>
+                                    <td>20</td>
+                                    <td>11</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>2007</td>
+                                    <td>33</td>
+                                    <td>9</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>2008</td>
+                                    <td>19</td>
+                                    <td>7</td>
+                                    <td>11</td>
+                                </tr>
+                                <tr>
+                                    <td>2009</td>
+                                    <td>20</td>
+                                    <td>15</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>2010</td>
+                                    <td>29</td>
+                                    <td>13</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>2011</td>
+                                    <td>26</td>
+                                    <td>8</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>2012</td>
+                                    <td>18</td>
+                                    <td>6</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>2013</td>
+                                    <td>21</td>
+                                    <td>13</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>2014</td>
+                                    <td>20</td>
+                                    <td>13</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>2015</td>
+                                    <td>28</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>2016</td>
+                                    <td>28</td>
+                                    <td>8</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>2017</td>
+                                    <td>19</td>
+                                    <td>7</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>2018</td>
+                                    <td>21</td>
+                                    <td>5</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>2019</td>
+                                    <td>31</td>
+                                    <td>12</td>
+                                    <td>17</td>
+                                </tr>
+                                <tr>
+                                    <td>2020</td>
+                                    <td>10</td>
+                                    <td>7</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>2021</td>
+                                    <td>8</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>المجموع الكلي</td>
+                                    <td>1242</td>
+                                    <td>485</td>
+                                    <td>407</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-content" id="apostolic">
+                <h1 class="apostolic-content" id="apostolic-header" style="color: #000000; font-size: 3rem; margin-bottom: 80px;"><img src='https://i.postimg.cc/tYWYxKzj/Black-Logo.png' border='0' alt='Black-Logo'><br>الحركة الرسولية</h1>
+                <button class="apostolic-button" id="apostolic-groups" style="margin-bottom: 50px;" onclick="showSubSection('groups')">المجموعات</button>
+                <button class="apostolic-button" id="apostolic-photos" style="margin-bottom: 50px;" onclick="showSubSection('photos')">صور</button>
+                <button class="apostolic-button" id="apostolic-info" style="margin-bottom: 50px;" onclick="showSubSection('AMinfo')">معلومات</button>
+                
+                <div class="apostolic-content" id="groups" style="display: none;"><!-- Content for groups -->
+                    <h2 id="groups-header">المجموعات</h2>
+                    
+                    <h3 id="group1">لجنة الحركة</h3>
+                    <div class="members-container">
+                        <div class="member">
+                            <h3 id="member1" dir="auto">حلا أيوب</h3>
+                            <div class="member-info">
+                                <p id="member1-contact" dir="auto">Email: 7lawfoud@gmail.com<br>Phone: 0525608131</p>
+                                <p id="member1-info" dir="auto">معلمة لغة عربية وتربية دينية مسيحية</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <h3 id="member2" dir="auto">فيفيان لحود</h3>
+                            <div class="member-info">
+                                <p id="member2-contact" dir="auto">Email: lahoud.vivi@gmail.com<br>Phone: 0523310111</p>
+                                <p id="member2-info" dir="auto">معلمة علم البيئة ولغة عبرية</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <h3 id="member3" dir="auto">الأب ساندي حبيب</h3>
+                            <div class="member-info">
+                                <p id="member3-contact" dir="auto">Email: sandyhabib@gmail.com<br>Phone: 0561651513</p>
+                                <p id="member3-info" dir="auto">كاهن الرعية ودكتور باللغة الانجليزية</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <h3 id="member4" dir="auto">رنا جبران</h3>
+                            <div class="member-info">
+                                <p id="member4-contact" dir="auto">Email: ranajubran@gmail.com<br>Phone: 0513154513</p>
+                                <p id="member4-info" dir="auto">معلومات معلومات معلومات معلومات معلومات</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <h3 id="member5" dir="auto">شعاع شحادة</h3>
+                            <div class="member-info">
+                                <p id="member5-contact" dir="auto">Email: sho3a3shehady@gmail.com<br>Phone: 0513564543</p>
+                                <p id="member5-info" dir="auto">معلومات معلومات معلومات معلومات معلومات</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <h3 id="member6" dir="auto">سيفان جبران</h3>
+                            <div class="member-info">
+                                <p id="member6-contact" dir="auto">Email: sivanjubran@gmail.com<br>Phone: 0513545344</p>
+                                <p id="member6-info" dir="auto">معلومات معلومات معلومات معلومات معلومات</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <h3 id="member7" dir="auto">امير سليمان</h3>
+                            <div class="member-info">
+                                <p id="member7-contact" dir="auto">Email: amirsliman@gmail.com<br>Phone: 0549846513</p>
+                                <p id="member7-info" dir="auto">معلومات معلومات معلومات معلومات معلومات</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <h3 id="member8" dir="auto">رامي هاشول</h3>
+                            <div class="member-info">
+                                <p id="member8-contact" dir="auto">Email: ramihashoul@gmail.com<br>Phone: 0535185466</p>
+                                <p id="member8-info" dir="auto">معلومات معلومات معلومات معلومات معلومات</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="group2">الشبيبة</h3>
+                    <div class="members-container">
+                        <div class="member">
+                            <div class="member-info">
+                                <p id="shabebe">حادي عشر وفوق ، اليوم: الجمعة - الساعة: 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="group3">الطلائع</h3>
+                    <div class="members-container">
+                        <div class="member">
+                            <div class="member-info">
+                                <p id="tla2e3">تاسع وعاشر ، اليوم: الجمعة - الساعة: 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="group4">المارينز</h3>
+                    <div class="members-container">
+                        <div class="member">
+                            <div class="member-info">
+                                <p id="mareens">سابع وثامن ، اليوم: الخميس - الساعة: 17:30</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="group5">الفرسان</h3>
+                    <div class="members-container">
+                        <div class="member">
+                            <div class="member-info">
+                                <p id="fursan">بستان-سادس ، اليوم: الجمعة - الساعة: 15:30</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apostolic-content" id="photos" style="display: none;"><!-- Content for photos -->
+                    <h2 id="photos-header">صور</h2><br>
+                    <div class="photo-container">
+                        <div class="photo-item">
+                            <img id="lagna-photo" src="https://i.postimg.cc/HW8dTqPt/أعضاء_لجنة_الحركة_الرسولية.jpg" alt="Photo 0">
+                            <h5 id="lagna" dir="auto">أعضاء لجنة الحركة الرسولية</h5>
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <div class="photo-item">
+                            <img id="shabebe-kodas" src="https://i.postimg.cc/kgmn1Tsv/شبيبة_الحركة_الرسولية_بعد_قداس_الأحد.jpg" alt="Photo 1">
+                            <h5 id="shabebe-kodas-d" dir="auto">شبيبة الحركة الرسولية بعد قداس الأحد</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="shabebe-mo5ayam" src="https://i.postimg.cc/t4N9LFmQ/شبيبة_الحركة_الرسولية_في_مخيم_2019.jpg" alt="Photo 2">
+                            <h5 id="shabebe-mo5ayam-d" dir="auto">شبيبة الحركة الرسولية في مخيم 2019</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="fursan-photo" src="https://i.postimg.cc/cH2WQh6Y/فرسان_الحركة_الرسولية.jpg" alt="Photo 3">
+                            <h5 id="fursan-photo-d" dir="auto">فرسان الحركة الرسولية</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="prague" src="https://i.postimg.cc/VsXVkQ2q/رحلة_مرشدي_الفرسان_إلى_براغ،_2023.jpg" alt="Photo 7">
+                            <h5 id="prague-d" dir="auto">رحلة مرشدي الفرسان إلى براغ، 2023</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="germany" src="https://i.postimg.cc/wBx9H3St/رحلة_مرشدي_الفرسان_إلى_ألمانيا،_2019.jpg" alt="Photo 7">
+                            <h5 id="germany-d" dir="auto">رحلة مرشدي الفرسان إلى ألمانيا، 2019</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="france" src="https://i.postimg.cc/GtDCzDsf/رحلة_مرشدي_الفرسان_إلى_فرنسا،_2018.jpg" alt="Photo 6">
+                            <h5 id="france-d" dir="auto">رحلة مرشدي الفرسان إلى فرنسا، 2018</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="malta" src="https://i.postimg.cc/YSXMSMHd/رحلة_مرشدي_الفرسان_إلى_مالطا،_2017.jpg" alt="Photo 5">
+                            <h5 id="malta-d" dir="auto">رحلة مرشدي الفرسان إلى مالطا، 2017</h5>
+                        </div>
+                        <div class="photo-item">
+                            <img id="poland" src="https://i.postimg.cc/1tfPn2Rs/في_الأيام_العالمية_للشبيبة_في_پولندا،_2016.jpg" alt="Photo 4">
+                            <h5 id="poland-d" dir="auto">في الأيام العالمية للشبيبة في پولندا، 2016</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="apostolic-content" id="AMinfo" style="display: none;"><!-- Content for AMinfo -->
+                    <h2 id="AMinfo-heading" dir="auto">معلومات</h2><br>
+                    <p id="AMinfo-p1" dir="auto">هي القلب النابض للرعية. نشأت الحركة الرسولية في الرعية في سنوات الثمانينات من القرن العشرين، إلا أنها لبست حلتها الجديدة مع مجيء راهبات القديسة تريز الطفل يسوع المارونيات أواخر عام 1998. تتكون الحركة من عدة فرق هي: الفرسان (الطلاب من صف البستان وحتى الصف السادس)، المارينز (طلاب صفّي السابع والثامن)، الطلائع (طلاب صفّي التاسع والعاشر)، الشبيبة (طلاب صفّي الحادي عشر والثاني عشر)، المرسلون (طلاب الجامعات)، وفرقة المتزوجين. للحركة لقاءات روحية-اجتماعية أسبوعية، بالإضافة لتنشئات ورحل داخلية عدّة خلال السنة؛ إضافة، نظمت الحركة أربع رحل لمرشدي الفرسان إلى خارج البلاد: بريطانيا عام 2016، مالطا عام 2017، فرنسا عام 2018 وألمانيا والنمسا عام 2019. تتكلل فعاليات الحركة بمخيم صيفي يدوم نحو عشرة أيام في حرم الكنيسة؛ عام 2019، بلغ عدد المشتركين في المخيم 318 ولدا وبنتا ونحو 50 مرشدا ومرشدة.</p>
+                </div>
+            </section>
+
+            <footer class="section-content" id="connnect">
+                
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <p>Email: example@example.com</p>
+                    <p>Phone: 0558862438</p>
+                </div>
+
+                <div class="location">
+                    <h2>Location</h2>
+                    <a href="https://maps.app.goo.gl/JTw1AsajNrvvkfqUA"><img src="https://i.postimg.cc/qRtkdtSB/location-on-FILL0-wght400-GRAD0-opsz48.png">Mar Maron Church, Jish, Israel</a>
+                </div>
+
+                <div class="social-media">
+                    <h2>Follow Us</h2>
+                    <a href="https://www.facebook.com/Apostolic.Movement.Jish" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/apostolic_movement_jish/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
